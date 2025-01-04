@@ -10,7 +10,13 @@ function applyMPClothing(ped, clothingConfig)
 end
 
 function spawnNPC(npcConfig)
-    local pedModel = npcConfig.useMPClothing and `mp_m_freemode_01` or GetHashKey(npcConfig.model)
+    local pedModel
+    if npcConfig.useMPClothing then
+        pedModel = npcConfig.useMPGender == "female" and `mp_f_freemode_01` or `mp_m_freemode_01`
+    else
+        pedModel = GetHashKey(npcConfig.model)
+    end
+
     RequestModel(pedModel)
     while not HasModelLoaded(pedModel) do
         Wait(0)
@@ -42,13 +48,14 @@ end)
 
 -- Commands
 RegisterCommand('pos', function()
-    local playerPed = PlayerPedId()  -- Get your player id
-    local playerCoords = GetEntityCoords(playerPed)  -- Get the current location
+    local playerPed = PlayerPedId() 
+    local playerCoords = GetEntityCoords(playerPed)  
+    local playerHeading = GetEntityHeading(playerPed)  
 
-    -- make command display cords in X.. Y.. Z..
-    local coordsString = string.format("Your current position is: X: %.2f, Y: %.2f, Z: %.2f", playerCoords.x, playerCoords.y, playerCoords.z)
+    -- Make command display xyz & H
+    local coordsString = string.format("Your current position is: X: %.2f, Y: %.2f, Z: %.2f, Heading: %.2f", playerCoords.x, playerCoords.y, playerCoords.z, playerHeading)
 
     TriggerEvent('chat:addMessage', {
         args = { coordsString }
     })
-end, false)  -- make this TRUE to make it admin only
+end, false)  -- Make this TRUE to make it admin only
