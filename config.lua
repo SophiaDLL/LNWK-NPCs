@@ -3,10 +3,10 @@ Config = {}
 Config.NPCs = {
     {
         name = "Police NPC Male", -- Name for the NPC This can be ANYTHING
-        useMPClothing = true, -- Enable//Disable MP Clothing usage
+        useMPClothing = false, -- Enable//Disable MP Clothing usage
         useMPGender = "male", -- if you set to male = MP_M if you set to female = MP_F
-        model = "s_f_y_ranger_01", -- If UseMPClothing is false, this will be the Spawned Ped ( https://forge.plebmasters.de/peds )
-        coords = vector4(428.47, -981.45, 29.71, 90), -- Sets the Ped Location X,y,z,H
+        model = "S_M_Y_Sheriff_01", -- If UseMPClothing is false, this will be the Spawned Ped ( https://forge.plebmasters.de/peds )
+        coords = vector4(428.21, -981.27, 29.71, 88.54), -- Sets the Ped Location X,y,z,H
         animationDict = "anim@heists@heist_corona@single_team", -- Animation Directory  ( https://forge.plebmasters.de/animations )
         animation = "single_team_loop_boss", -- Animations  ( https://forge.plebmasters.de/animations )
         mpClothing = {
@@ -35,8 +35,8 @@ Config.NPCs = {
         name = "Police NPC Female", -- Name for the NPC This can be ANYTHING
         useMPClothing = false, -- Enable//Disable MP Clothing usage
         useMPGender = "female", -- if you set to male = MP_M if you set to female = MP_F
-        model = "a_f_y_business_04", -- If UseMPClothing is false, this will be the Spawned Ped ( https://forge.plebmasters.de/peds )
-        coords = vector4(428.47, -979.45, 29.71, 90), -- Sets the Ped Location X,y,z,H
+        model = "S_F_Y_Sheriff_01", -- If UseMPClothing is false, this will be the Spawned Ped ( https://forge.plebmasters.de/peds )
+        coords = vector4(428.51, -978.83, 29.71, 92.47), -- Sets the Ped Location X,y,z,H
         animationDict = "anim@heists@heist_corona@single_team", -- Animation Directory  ( https://forge.plebmasters.de/animations )
         animation = "single_team_loop_boss",  -- Animations  ( https://forge.plebmasters.de/animations )
         mpClothing = {
