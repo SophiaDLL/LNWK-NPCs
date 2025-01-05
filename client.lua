@@ -77,7 +77,7 @@ RegisterCommand('pos', function()
     local playerPed = PlayerPedId() 
     local playerCoords = GetEntityCoords(playerPed)  
     local playerHeading = GetEntityHeading(playerPed)  
-    local positionText = string.format("vector4(%.2f, %.2f, %.2f, %.2f)", playerCoords.x, playerCoords.y, playerCoords.z, playerHeading)
+    local positionText = string.format("vector4(%.2f, %.2f, %.2f, %.2f)", playerCoords.x, playerCoords.y, playerCoords.z -1.0, playerHeading)
 
     -- NUI
     SendNUIMessage({
