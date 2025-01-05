@@ -1,10 +1,12 @@
 local spawnedNPCs = {}
 
 function applyMPClothing(ped, clothingConfig)
-    for _, component in ipairs(clothingConfig.components) do
+    for i=1, #(clothingConfig.components) do
+        local component = clothingConfig.components[i]
         SetPedComponentVariation(ped, component.componentId, component.drawableId, component.textureId, 0)
     end
-    for _, prop in ipairs(clothingConfig.props) do
+    for i=1, #(clothingConfig.props) do
+        local prop = clothingConfig.props[i]
         SetPedPropIndex(ped, prop.propId, prop.drawableId, prop.textureId, true)
     end
 end
@@ -14,7 +16,7 @@ function spawnNPC(npcConfig)
     if npcConfig.useMPClothing then
         pedModel = npcConfig.useMPGender == "female" and `mp_f_freemode_01` or `mp_m_freemode_01`
     else
-        pedModel = GetHashKey(npcConfig.model)
+        pedModel = joaat(npcConfig.model)
     end
 
     RequestModel(pedModel)
@@ -35,14 +37,21 @@ function spawnNPC(npcConfig)
     while not HasAnimDictLoaded(npcConfig.animationDict) do
         Wait(0)
     end
+
     SetBlockingOfNonTemporaryEvents(ped, true)  
     TaskPlayAnim(ped, npcConfig.animationDict, npcConfig.animation, 8.0, -8.0, -1, 1, 0, false, false, false)
-    table.insert(spawnedNPCs, { name = npcConfig.name, ped = ped })
+    SetModelAsNoLongerNeeded(pedModel)
+    RemoveAnimDict(npcConfig.animationDict)
+    spawnedNPCs[#spawnedNPCs + 1] = { name = npcConfig.name, ped = ped }
 end
 
 CreateThread(function()
-    for _, npc in ipairs(Config.NPCs) do
-        spawnNPC(npc)
+   for i=1, #(Config.NPCs) do
+        spawnNPC(Config.NPCs[i])
+    end
+
+    if GetCurrentResourceName() ~= "PedSpawner" then
+        print("Please dont edit the resource name :(")
     end
 end)
 
@@ -59,3 +68,13 @@ RegisterCommand('pos', function()
         args = { coordsString }
     })
 end, false)  -- Make this TRUE to make it admin only
+
+AddEventHandler("onResourceStop", function(resourceName)
+    if resourceName ~= GetCurrentResourceName() then
+        return
+    end
+
+    for i=1, #spawnedNPCs do
+        DeleteEntity(spawnedNPCs[i].ped)
+    end
+end)
