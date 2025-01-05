@@ -38,3 +38,10 @@
 
                         -- drawableId = 15 = The number of clothing relevant to the clothing
                         -- textureId = 0  = The texture that you want to use on the clothing
+
+-- CORRECT USE OF THE /PlacePed Command
+
+command = /PlacePed
+name = "the name of youre ped"
+type = "true/false" true = mp Clothing false = Ped Mpdle
+gender = "male/Female"
