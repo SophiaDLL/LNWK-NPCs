@@ -1,3 +1,4 @@
+-- DO NOT CHANGE THE BELLOW IF YOU DO NOT KNOW WHAT YOU ARE DOING
 local spawnedNPCs = {}
 
 function applyMPClothing(ped, clothingConfig)
@@ -73,11 +74,47 @@ AddEventHandler('onResourceStart', function (resourceName)
 end)
 
 -- Bellow this point will contain all Commands.
-RegisterCommand('pos', function()
+RegisterCommand('vec4', function()
     local playerPed = PlayerPedId() 
     local playerCoords = GetEntityCoords(playerPed)  
     local playerHeading = GetEntityHeading(playerPed)  
-    local positionText = string.format("vector4(%.2f, %.2f, %.2f, %.2f)", playerCoords.x, playerCoords.y, playerCoords.z -1.0, playerHeading)
+    local positionText = string.format("vec4(%.2f, %.2f, %.2f, %.2f)", playerCoords.x, playerCoords.y, playerCoords.z -1.0, playerHeading)
+
+    -- NUI
+    SendNUIMessage({
+        action = "copyToClipboard",
+        text = positionText
+    })
+
+    -- noty
+    TriggerEvent("chat:addMessage",{
+        args = {"Position copied to clipboard: ".. positionText}
+    })
+end, false)
+
+RegisterCommand('vec3', function()
+    local playerPed = PlayerPedId() 
+    local playerCoords = GetEntityCoords(playerPed)  
+    local playerHeading = GetEntityHeading(playerPed)  
+    local positionText = string.format("vec3(%.2f, %.2f, %.2f)", playerCoords.x, playerCoords.y, playerCoords.z -1.0)
+
+    -- NUI
+    SendNUIMessage({
+        action = "copyToClipboard",
+        text = positionText
+    })
+
+    -- noty
+    TriggerEvent("chat:addMessage",{
+        args = {"Position copied to clipboard: ".. positionText}
+    })
+end, false)
+
+RegisterCommand('vec2', function()
+    local playerPed = PlayerPedId() 
+    local playerCoords = GetEntityCoords(playerPed)  
+    local playerHeading = GetEntityHeading(playerPed)  
+    local positionText = string.format("vec2(%.2f, %.2f)", playerCoords.x, playerCoords.y)
 
     -- NUI
     SendNUIMessage({

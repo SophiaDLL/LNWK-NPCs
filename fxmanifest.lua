@@ -4,13 +4,24 @@ game 'gta5'
 author 'laurelnwk.com/team'
 description 'A Simple FiveM Script that allows you spawn Both Multi-Player & Single-Player Peds'
 lua54 'yes'
-version '1.1.2' -- /POS TO CLIPBOARD UPDATE
+version '1.0.1'
 
 
 
-client_script 'client.lua'
-shared_script 'config.lua'
+-- client_script 'client.lua'
+client_scripts {
+   -- 'test_write.lua',
+    'client.lua'
+}
+server_scripts {
+    'server.lua'
+} 
+shared_scripts {
+    'config.lua'
+} 
+
 ui_page 'html/index.html'
+
 files {
     'html/index.html',
     'html/style.css',
