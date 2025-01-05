@@ -10,7 +10,7 @@ Config.NPCs = {
         animationDict = "anim@heists@heist_corona@single_team", -- Animation Directory  ( https://forge.plebmasters.de/animations )
         animation = "single_team_loop_boss", -- Animations  ( https://forge.plebmasters.de/animations )
         mpClothing = {
-            components = { -- This is all clothing 
+            components = {  -- This is all clothing  (This applys for mp/sp peds)
                 { componentId = 1, drawableId = 3, textureId = 0 }, -- Masks
                 { componentId = 3, drawableId = 0, textureId = 0 }, -- Arms
                 { componentId = 4, drawableId = 18, textureId = 0 }, -- Legs
@@ -40,7 +40,7 @@ Config.NPCs = {
         animationDict = "anim@heists@heist_corona@single_team", -- Animation Directory  ( https://forge.plebmasters.de/animations )
         animation = "single_team_loop_boss",  -- Animations  ( https://forge.plebmasters.de/animations )
         mpClothing = {
-            components = { -- This is all clothing 
+            components = {  -- This is all clothing  (This applys for mp/sp peds)
                 { componentId = 1, drawableId = 0, textureId = 0 }, -- Masks
                 { componentId = 3, drawableId = 0, textureId = 0 }, -- Arms
                 { componentId = 4, drawableId = 1, textureId = 0 }, -- Legs
