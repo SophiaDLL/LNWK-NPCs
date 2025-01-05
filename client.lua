@@ -29,6 +29,7 @@ function spawnNPC(npcConfig)
     FreezeEntityPosition(ped, true) 
     SetEntityCanBeDamaged(ped, false)
     SetEntityProofs(ped, true, true, true, true, true, true, true, true)
+    SetPedDefaultComponentVariation(ped)
     if npcConfig.useMPClothing then
         applyMPClothing(ped, npcConfig.mpClothing)
     end
