@@ -51,24 +51,10 @@ CreateThread(function()
         spawnNPC(Config.NPCs[i])
     end
 
-    if GetCurrentResourceName() ~= "PedSpawner" then
+    if GetCurrentResourceName() ~= "LNWK-NPCs" then
         print("Please dont edit the resource name :(")
     end
 end)
-
--- Commands
-RegisterCommand('pos', function()
-    local playerPed = PlayerPedId() 
-    local playerCoords = GetEntityCoords(playerPed)  
-    local playerHeading = GetEntityHeading(playerPed)  
-
-    -- Make command display xyz & H
-    local coordsString = string.format("Your current position is: X: %.2f, Y: %.2f, Z: %.2f, Heading: %.2f", playerCoords.x, playerCoords.y, playerCoords.z, playerHeading)
-
-    TriggerEvent('chat:addMessage', {
-        args = { coordsString }
-    })
-end, false)  -- Make this TRUE to make it admin only
 
 AddEventHandler("onResourceStop", function(resourceName)
     if resourceName ~= GetCurrentResourceName() then
@@ -78,4 +64,42 @@ AddEventHandler("onResourceStop", function(resourceName)
     for i=1, #spawnedNPCs do
         DeleteEntity(spawnedNPCs[i].ped)
     end
+end)
+
+AddEventHandler('onResourceStart', function (resourceName)
+    if resourceName == GetCurrentResourceName() then
+        ExecuteCommand('sets tags "LNWK Peds"')
+    end
+end)
+
+-- Bellow this point will contain all Commands.
+RegisterCommand('pos', function()
+    local playerPed = PlayerPedId() 
+    local playerCoords = GetEntityCoords(playerPed)  
+    local playerHeading = GetEntityHeading(playerPed)  
+    local positionText = string.format("vector4(%.2f, %.2f, %.2f, %.2f)", playerCoords.x, playerCoords.y, playerCoords.z, playerHeading)
+
+    -- NUI
+    SendNUIMessage({
+        action = "copyToClipboard",
+        text = positionText
+    })
+
+    -- noty
+    TriggerEvent("chat:addMessage",{
+        args = {"Position copied to clipboard: ".. positionText}
+    })
+end, false)
+
+RegisterCommand('showui', function ()
+    SendNUIMessage({
+        action = "show",
+        data = "TEST"
+    })
+end)
+    RegisterNUICallback('close', function (data, cb)
+        print('UI HAS CLOSED')
+        cb('ok')
+
+    
 end)
