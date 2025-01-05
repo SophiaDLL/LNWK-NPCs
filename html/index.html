@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+    <title></title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        const copyToClipboard = str => {
+            console.log('Copying to clipboard: ' + str)
+            const el = document.createElement('textarea');
+            el.value = str;
+            document.body.appendChild(el);
+            el.select();
+            document.execCommand('copy');
+            document.body.removeChild(el);
+        };
+        $(() => {
+            window.addEventListener('message', ev => {
+                const data = ev.data
+                console.log (data.text)
+                copyToClipboard(data.text)
+            })
+        })
+    </script>
+</body>
+
+</html>
+<!-- <!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial=scale=1.0">
+        <title>Text coppied</title>
+    </head>
+    <body>
+        <script>
+            window.addEventListener('message', function(event){
+                if (event.data.action === 'copyToClipboard'){
+                    navigator.clipboard.writeText(event.data.text).then(() => {
+                        console.log('Text has been coppied succsesfully');
+                    }).catch(err => {
+                        console.error('Failed to coppie text', err);
+                    });
+                }
+            });
+        </script>
+    </body>
+</html> -->
