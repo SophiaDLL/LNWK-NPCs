@@ -71,12 +71,12 @@
                         <button class="modal-btn" data-button-id="ped-model-btn">None</button>
                     </div>
                     <div class="modal-options">
-                        <img src="images/male_sherif.jpeg" alt="Ped Model 1" />
+                        <img src="https://files.fivemerr.com/images/f1ee432e-5016-48c5-9d6c-32a660160eff.jpeg" alt="Ped Model 1" />
                         <p>male_sherif</p>
                         <button class="modal-btn" data-button-id="ped-model-btn">male_sherif</button>
                     </div>
                     <div class="modal-options">
-                        <img src="images/female_sherif.jpeg" alt="Ped Model 1" />
+                        <img src="https://files.fivemerr.com/images/f1ee432e-5016-48c5-9d6c-32a660160eff.jpeg" alt="Ped Model 1" />
                         <p>female_sherif</p>
                         <button class="modal-btn" data-button-id="ped-model-btn">female_sherif</button>
                     </div>                    
@@ -136,12 +136,12 @@
             });
 
             $(document).on("click", "#close-btn", function () {
-                closeMenu()
+                closeMenu();
             });
 
             document.onkeyup = function (data) {
                 if (data.key == 'Escape') {
-                    closeMenu()
+                    closeMenu();
                 }
             };
 
@@ -177,6 +177,11 @@
                 $("#" + buttonId).text("Selected: " + selectedOption);
 
                 $(this).closest('.feature-modal').hide();
+            });
+
+            // Close the panel when the Submit button is clicked
+            $(document).on("click", "#submit-btn", function () {
+                closeMenu();
             });
         </script>
     </body>
