@@ -51,13 +51,14 @@ CreateThread(function()
     while true do
         Wait(1000) -- Check every second
 
-        local playerPed = PlayerPedId()
+        local playerPed = PlayerPedId() 
         local playerCoords = GetEntityCoords(playerPed)
 
         for i, npcConfig in ipairs(Config.NPCs) do
             local npc = spawnedNPCs[i]
+            local npcCoords = vector3(npcConfig.coords.x, npcConfig.coords.y, npcConfig.coords.z)
             local npcExists = npc and DoesEntityExist(npc.ped)
-            local distance = #(playerCoords - npcConfig.coords)
+            local distance = #(playerCoords - npcCoords)
 
             if distance <= 50.0 then
                 if not npcExists then
