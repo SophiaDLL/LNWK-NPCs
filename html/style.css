@@ -19,11 +19,12 @@ body {
     height: 50vh;
     width: 73vh;
     background-color: rgb(22 19 19);
-    /* overflow-x: hidden; */
     box-shadow: 0px 4px 10px rgb(0 0 0 / 50%);
-    /* padding: 15px; */
-    padding-top: 35px;
+    padding: 20px;
     border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .groups-border::before {
@@ -36,36 +37,87 @@ body {
 }
 
 .npc-header {
+    font-size: 24px;
+    font-family: Arial, Helvetica, sans-serif;
     text-align: center;
-    color: white;
-    margin-top: 10px; /* Space below the thick top border */
+    color: rgb(181, 181, 181);
+    margin-bottom: 20px;
 }
 
 #close-btn {
     font-size: 18px;
     color: rgb(245, 105, 105);
     position: absolute;
-    top: 5px;
-    right: 5px;
+    top: 10px;
+    right: 10px;
     cursor: pointer;
     z-index: 100;
+}
+
+.form-container {
+    display: grid;
+    grid-template-columns: 1fr; 
+    grid-gap: 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: #e6e6e6;
+}
+
+input, select {
+    width: 100%;
+    padding: 12px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #333;
+    color: #e6e6e6;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+input:focus, select:focus {
+    border-color: #ff1fb0;
+    outline: none;
 }
 
 button {
     background-color: #cc0069;
     color: #d1d1d1;
     border: none;
-    border-radius: 3px;
-    padding: 7.5px 15px;
-    font-size: 12px;
+    border-radius: 5px;
+    padding: 12px;
+    font-size: 14px;
     cursor: pointer;
-    transition: bacground-color 0.5s;
+    transition: background-color 0.5s, box-shadow 0.3s ease;
+    box-shadow: 0 0 8px rgba(204, 0, 105, 0.5);
 }
 
-button:hover{
+button:hover {
     background-color: #ff1fb0;
+    box-shadow: 0 0 15px rgba(204, 0, 105, 0.6);
 }
 
-button:active{
+button:active {
     background-color: #940060;
+    box-shadow: 0 0 20px rgba(204, 0, 105, 0.7)
+}
+
+@media screen and (max-width: 600px) {
+    #groups-container {
+        width: 90%;
+        height: auto;
+    }
+
+    button, input, select {
+        font-size: 12px;
+        padding: 10px;
+    }
 }
