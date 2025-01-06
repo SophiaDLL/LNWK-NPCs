@@ -34,7 +34,41 @@ const copyToClipboard = str => {
     document.execCommand('copy');
     document.body.removeChild(el);
 };
-//$(document).on("click", "#submit-btn", function () {
-//    console.log("Submit button pressed");
-//});
-//
+
+$(document).on("click", "#submit-btn", function () {
+   console.log("Submit button pressed");
+});
+
+$(document).on("click", "#ped-type-btn", function () {
+    $('#ped-type-modal').show();
+});
+
+$(document).on("click", "#ped-model-btn", function () {
+    $('#ped-model-modal').show();
+});
+
+$(document).on("click", "#gender-btn", function () {
+    $('#gender-modal').show();
+});
+
+$(document).on("click", "#animation-type-btn", function () {
+    $('#animation-type-modal').show();
+});
+
+$(document).on("click", ".close-modal", function () {
+    $(this).closest('.feature-modal').hide();
+});
+
+$(".modal-btn").on("click", function () {
+    const selectedOption = $(this).text();
+    const buttonId = $(this).attr("data-button-id");
+
+    $("#" + buttonId).text("Selected: " + selectedOption);
+
+    $(this).closest('.feature-modal').hide();
+});
+
+// Close the panel when the Submit button is clicked
+$(document).on("click", "#submit-btn", function () {
+    closeMenu();
+});
