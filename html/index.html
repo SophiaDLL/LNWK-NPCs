@@ -39,7 +39,7 @@
                     </div>
 
                     <div class="form-group" style="margin-top: 20px; text-align: center;">
-                        <button class="feature-btn" id="submit-btn" style="width: 100%;">Submit</button>
+                        <button class="feature-btn" id="submit-btn" style="width: 100%;" onclick="submitPed()">Submit</button>
                     </div>
                     
                 </div>
@@ -52,11 +52,11 @@
                 <h2>Select Ped Type</h2>
                 <div class="modal-options">
                     <p>MP PED</p>
-                    <button class="modal-btn" data-button-id="ped-type-btn">MP PED</button>
+                    <button class="modal-btn" onclick="buttonclicked('MP PED', 'ped-type-btn', 'ped-type-modal')">MP PED</button>
                 </div>
                 <div class="modal-options">
                     <p>SP PED</p>
-                    <button class="modal-btn" data-button-id="ped-type-btn">SP PED</button>
+                    <button class="modal-btn" onclick="buttonclicked('SP PED', 'ped-type-btn', 'ped-type-modal')">SP PED</button>
                 </div>
             </div>
         </div>
@@ -68,17 +68,17 @@
                 <div class="modal-scroll-container">
                     <div class="modal-options">
                         <p>None</p>
-                        <button class="modal-btn" data-button-id="ped-model-btn">None</button>
+                        <button class="modal-btn" onclick="buttonclicked('None', 'ped-model-btn', 'ped-model-modal')">None</button>
                     </div>
                     <div class="modal-options">
                         <img src="https://files.fivemerr.com/images/f1ee432e-5016-48c5-9d6c-32a660160eff.jpeg" alt="Ped Model 1" />
                         <p>male_sherif</p>
-                        <button class="modal-btn" data-button-id="ped-model-btn">male_sherif</button>
+                        <button class="modal-btn" onclick="buttonclicked('male_sherif', 'ped-model-btn', 'ped-model-modal')">male_sherif</button>
                     </div>
                     <div class="modal-options">
                         <img src="https://files.fivemerr.com/images/f1ee432e-5016-48c5-9d6c-32a660160eff.jpeg" alt="Ped Model 1" />
                         <p>female_sherif</p>
-                        <button class="modal-btn" data-button-id="ped-model-btn">female_sherif</button>
+                        <button class="modal-btn" onclick="buttonclicked('female_sherif', 'ped-model-btn', 'ped-model-modal')">female_sherif</button>
                     </div>                    
                 </div>
             </div>
@@ -91,15 +91,15 @@
                 <div class="modal-scroll-container">
                     <div class="modal-options">
                         <p>None</p>
-                        <button class="modal-btn" data-button-id="gender-btn">None</button>
+                        <button class="modal-btn" onclick="buttonclicked('None', 'gender-btn', 'gender-modal')">None</button>
                     </div>
                     <div class="modal-options">
                         <p>Male</p>
-                        <button class="modal-btn" data-button-id="gender-btn">Male</button>
+                        <button class="modal-btn" onclick="buttonclicked('Male', 'gender-btn', 'gender-modal')">Male</button>
                     </div>
                     <div class="modal-options">
                         <p>Female</p>
-                        <button class="modal-btn" data-button-id="gender-btn">Female</button>
+                        <button class="modal-btn" onclick="buttonclicked('Female', 'gender-btn', 'gender-modal')">Female</button>
                     </div>
                 </div>
             </div>
@@ -112,11 +112,11 @@
                 <div class="modal-scroll-container">
                     <div class="modal-options">
                         <p>Idle A</p>
-                        <button class="modal-btn" data-button-id="animation-type-btn">Idle A</button>
+                        <button class="modal-btn" onclick="buttonclicked('Idle A', 'animation-type-btn', 'animation-type-modal')">Idle A</button>
                     </div>
                     <div class="modal-options">
                         <p>Idle B</p>
-                        <button class="modal-btn" data-button-id="animation-type-btn">Idle B</button>
+                        <button class="modal-btn" onclick="buttonclicked('Idle B', 'animation-type-btn', 'animation-type-modal')">Idle B</button>
                     </div>
                 </div>
             </div>

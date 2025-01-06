@@ -171,3 +171,11 @@ end)
 RegisterNUICallback('open', function()
     SetNuiFocus(true, true)
 end)
+
+RegisterNUICallback('spawnPed', function(pedData, cb)
+    print(json.encode(pedData))
+    -- spawn the ped like before
+
+    print('ped added')
+    cb("")
+end)
