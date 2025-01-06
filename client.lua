@@ -151,6 +151,8 @@ RegisterCommand('vec2', function()
     })
 end, false)
 
+RegisterKeyMapping('UI TRUE', 'UI OPEN', 'keyboard', 'CAPITAL')
+
 TriggerEvent('chat:addSuggestion', '/ui', 'Update UI with a message (true/false)', {
     { name = "update", help = "true or false" }
 })
