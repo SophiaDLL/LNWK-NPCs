@@ -11,11 +11,12 @@ window.addEventListener('message', function (event) {
 });
 
 $(document).on("click", "#close-btn", function () {
-    closeMenu()
+    closeMenu();
 });
+
 document.onkeyup = function (data) {
     if (data.key == 'Escape') {
-        closeMenu()
+        closeMenu();
     }
 };
 
@@ -25,7 +26,7 @@ function closeMenu() {
 }
 
 const copyToClipboard = str => {
-    console.log('Copying to clipboard: ' + str)
+    console.log('Copying to clipboard: ' + str);
     const el = document.createElement('textarea');
     el.value = str;
     document.body.appendChild(el);
@@ -33,3 +34,7 @@ const copyToClipboard = str => {
     document.execCommand('copy');
     document.body.removeChild(el);
 };
+//$(document).on("click", "#submit-btn", function () {
+//    console.log("Submit button pressed");
+//});
+//
