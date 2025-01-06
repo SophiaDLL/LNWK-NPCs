@@ -23,92 +23,100 @@
                     </div>
 
                     <div class="form-group" style="margin-top: 15px;">
-                        <label for="ped-type" style="display: block; color: #e6e6e6; margin-bottom: 8px;">Ped Type:</label>
-                        <select id="ped-type" name="ped-type" style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc; background-color: #333; color: #e6e6e6;">
-                            <option value="human">MP PED</option>
-                            <option value="human">SP PED</option>
-                        </select>
+                        <button class="feature-btn" id="ped-type-btn">Ped Type</button>
                     </div>
 
                     <div class="form-group" style="margin-top: 15px;">
-                        <label for="ped-type" style="display: block; color: #e6e6e6; margin-bottom: 8px;">Ped Model: "Only needed for SP PEDS"</label>
-                        <select id="ped-type" name="ped-type" style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc; background-color: #333; color: #e6e6e6;">
-                            <option value="human">CSB_Tonya</option>
-                            <option value="human">A_F_M_EastSA_02</option>
-                            <option value="human">CSB_TrafficWarden</option>
-                            <option value="human">G_M_Y_StrPunk_01</option>
-                            <option value="human">A_M_O_ACult_01</option>
-                            <option value="human">A_C_Pig</option>
-                            <option value="human">CSB_MWeather</option>
-                            <option value="human">S_F_Y_Sheriff_01</option>
-                            <option value="human">A_M_Y_BeachVesp_02</option>
-                            <option value="human">A_C_Chickenhawk</option>
-                            <option value="human">A_M_Y_StLat_01</option>
-                            <option value="human">IG_DJTalIgnazio</option>
-                            <option value="human">IG_Vagos_Leader</option>
-                            <option value="human">A_M_Y_MusclBeac_02</option>
-                            <option value="human">CSB_Imani</option>
-                            <option value="human">IG_JuanStrickler</option>
-                            <option value="human">A_F_Y_Business_02</option>
-                            <option value="human">CSB_JamalAmir</option>
-                            <option value="human">IG_Michelle</option>
-                            <option value="human">CS_Patricia_02</option>
-                            <option value="human">S_M_M_StrPerf_01</option>
-                            <option value="human">MP_M_G_VagFun_01</option>
-                            <option value="human">CSB_G</option>
-                            <option value="human">A_M_M_Indian_01</option>
-                            <option value="human">A_F_Y_RurMeth_01</option>
-                            <option value="human">G_M_M_MaraGrande_01</option>
-                            <option value="human">A_M_Y_Beach_04</option>
-                            <option value="human">G_M_M_CartelGuards_02</option>
-                            <option value="human">S_M_M_Bouncer_01</option>
-                            <option value="human">A_M_M_KTown_01</option>
-                            <option value="human">MP_M_ExecPA_01</option>
-                            <option value="human">A_M_M_Skidrow_01</option>
-                        </select>
+                        <button class="feature-btn" id="ped-model-btn">Ped Model</button>
                     </div>
 
                     <div class="form-group" style="margin-top: 15px;">
-                        <label for="ped-type" style="display: block; color: #e6e6e6; margin-bottom: 8px;">Gender: "Only needed for MP PEDS</label>
-                        <select id="ped-type" name="ped-type" style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc; background-color: #333; color: #e6e6e6;">
-                            <option value="human">Male</option>
-                            <option value="human">Female</option>
-                        </select>
+                        <button class="feature-btn" id="gender-btn">Gender</button>
                     </div>
 
                     <div class="form-group" style="margin-top: 15px;">
-                        <label for="animation-type" style="display: block; color: #e6e6e6; margin-bottom: 8px;">Animation Type:</label>
-                        <select id="animation-type" name="animation-type" style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc; background-color: #333; color: #e6e6e6;">
-                            <option value="walk">idle_a</option>
-                            <option value="walk">idle_a</option>
-                            <option value="walk">idle_a</option>
-                            <option value="walk">idle_a</option>
-                            <option value="walk">idle_a</option>
-                            <option value="walk">idle_a</option>
-                            <option value="walk">idle_a</option>
-                            <option value="walk">idle_a</option>
-                            <option value="walk">idle_a</option>
-                            <option value="walk">idle_a</option>
-                            <option value="walk">idle_a</option>
-                            <option value="walk">idle_a</option>
-                            <option value="walk">idle_a</option>
-                            <option value="walk">idle_a</option>
-                            <option value="walk">idle_a</option>
-                            <option value="walk">idle_a</option>
-                            <option value="walk">idle_a</option>
-                            <option value="walk">idle_a</option>
-                            <option value="walk">idle_a</option>
-                            <option value="walk">idle_a</option>
-                            <option value="walk">idle_a</option>
-                            <option value="walk">idle_a</option>
-                            <option value="walk">idle_a</option>
-                            <option value="walk">idle_a</option>
-                            <option value="walk">idle_a</option>
-                        </select>
+                        <button class="feature-btn" id="animation-type-btn">Animation Type</button>
                     </div>
 
                     <div class="form-group" style="margin-top: 20px; text-align: center;">
-                        <button id="submit-btn" style="width: 100%;">Submit</button>
+                        <button class="feature-btn" id="submit-btn" style="width: 100%;">Submit</button>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+        <div id="ped-type-modal" class="feature-modal">
+            <div class="modal-content">
+                <i class="fa-solid fa-circle-xmark close-modal" id="close-ped-type-modal"></i>
+                <h2>Select Ped Type</h2>
+                <div class="modal-options">
+                    <p>MP PED</p>
+                    <button class="modal-btn" data-button-id="ped-type-btn">MP PED</button>
+                </div>
+                <div class="modal-options">
+                    <p>SP PED</p>
+                    <button class="modal-btn" data-button-id="ped-type-btn">SP PED</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="ped-model-modal" class="feature-modal">
+            <div class="modal-content">
+                <i class="fa-solid fa-circle-xmark close-modal" id="close-ped-model-modal"></i>
+                <h2>Select Ped Model</h2>
+                <div class="modal-scroll-container">
+                    <div class="modal-options">
+                        <p>None</p>
+                        <button class="modal-btn" data-button-id="ped-model-btn">None</button>
+                    </div>
+                    <div class="modal-options">
+                        <img src="ped_model1.jpg" alt="Ped Model 1" />
+                        <p>CSB_Tonya</p>
+                        <button class="modal-btn" data-button-id="ped-model-btn">CSB_Tonya</button>
+                    </div>
+                    <div class="modal-options">
+                        <img src="ped_model2.jpg" alt="Ped Model 2" />
+                        <p>A_F_M_EastSA_02</p>
+                        <button class="modal-btn" data-button-id="ped-model-btn">A_F_M_EastSA_02</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="gender-modal" class="feature-modal">
+            <div class="modal-content">
+                <i class="fa-solid fa-circle-xmark close-modal" id="close-gender-modal"></i>
+                <h2>Select Gender</h2>
+                <div class="modal-scroll-container">
+                    <div class="modal-options">
+                        <p>None</p>
+                        <button class="modal-btn" data-button-id="gender-btn">None</button>
+                    </div>
+                    <div class="modal-options">
+                        <p>Male</p>
+                        <button class="modal-btn" data-button-id="gender-btn">Male</button>
+                    </div>
+                    <div class="modal-options">
+                        <p>Female</p>
+                        <button class="modal-btn" data-button-id="gender-btn">Female</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="animation-type-modal" class="feature-modal">
+            <div class="modal-content">
+                <i class="fa-solid fa-circle-xmark close-modal" id="close-animation-type-modal"></i>
+                <h2>Select Animation Type</h2>
+                <div class="modal-scroll-container">
+                    <div class="modal-options">
+                        <p>Idle A</p>
+                        <button class="modal-btn" data-button-id="animation-type-btn">Idle A</button>
+                    </div>
+                    <div class="modal-options">
+                        <p>Idle B</p>
+                        <button class="modal-btn" data-button-id="animation-type-btn">Idle B</button>
                     </div>
                 </div>
             </div>
@@ -130,6 +138,7 @@
             $(document).on("click", "#close-btn", function () {
                 closeMenu()
             });
+
             document.onkeyup = function (data) {
                 if (data.key == 'Escape') {
                     closeMenu()
@@ -141,15 +150,34 @@
                 $.post(`https://${GetParentResourceName()}/close`);
             }
 
-            const copyToClipboard = str => {
-                console.log('Copying to clipboard: ' + str)
-                const el = document.createElement('textarea');
-                el.value = str;
-                document.body.appendChild(el);
-                el.select();
-                document.execCommand('copy');
-                document.body.removeChild(el);
-            };
+            $(document).on("click", "#ped-type-btn", function () {
+                $('#ped-type-modal').show();
+            });
+
+            $(document).on("click", "#ped-model-btn", function () {
+                $('#ped-model-modal').show();
+            });
+
+            $(document).on("click", "#gender-btn", function () {
+                $('#gender-modal').show();
+            });
+
+            $(document).on("click", "#animation-type-btn", function () {
+                $('#animation-type-modal').show();
+            });
+
+            $(document).on("click", ".close-modal", function () {
+                $(this).closest('.feature-modal').hide();
+            });
+
+            $(".modal-btn").on("click", function () {
+                const selectedOption = $(this).text();
+                const buttonId = $(this).attr("data-button-id");
+
+                $("#" + buttonId).text("Selected: " + selectedOption);
+
+                $(this).closest('.feature-modal').hide();
+            });
         </script>
     </body>
 </html>
