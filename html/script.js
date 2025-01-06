@@ -1,27 +1,35 @@
-window.addEventListener('message', function (event) { 
+window.addEventListener('message', function (event) {
     const data = event.data;
 
-    if (data.action === 'show') {
-        document.getElementById('npc-ui').style.display = 'block';
-        document.querySelector(#npc-ui p).innerText = data.data || 'Default';
-    } else if (data.action === 'hide'){
-        document.getElementById('npc-ui').style.display = 'none';
+    if (data.update === 'true') {
+        document.getElementById('groups-container').style.display = 'block';
+        $.post(`https://${GetParentResourceName()}/open`);
+    } else {
+        document.getElementById('groups-container').style.display = 'none';
+        $.post(`https://${GetParentResourceName()}/close`);
     }
- });
+});
 
- document.addEventListener('DOMContentLoaded',() => {
-    const closeButton = document.createElement('button');
-    closeButton.innerText = 'close';
-    closeButton.onclick = () => {
-    document.getElementById('npc-ui').style.display = 'none';
+$(document).on("click", "#close-btn", function () {
+    closeMenu()
+});
+document.onkeyup = function (data) {
+    if (data.key == 'Escape') {
+        closeMenu()
+    }
+};
 
-    fetch(`https://${GetParentResourceName()}/close`,{
-method: 'POST',
-headers: {
-    'content-type': 'application/json',
-},
-    body: JSON.stringify({}),
-    }).then(() => console.log('CLOSED UI'));
-    };
-    document.getElementById('npc-ui').appendChild(closeButton);
- });
+function closeMenu() {
+    document.getElementById('groups-container').style.display = 'none';
+    $.post(`https://${GetParentResourceName()}/close`);
+}
+
+const copyToClipboard = str => {
+    console.log('Copying to clipboard: ' + str)
+    const el = document.createElement('textarea');
+    el.value = str;
+    document.body.appendChild(el);
+    el.select();
+    document.execCommand('copy');
+    document.body.removeChild(el);
+};

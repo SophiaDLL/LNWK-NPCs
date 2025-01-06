@@ -2,11 +2,11 @@
 local spawnedNPCs = {}
 
 function applyMPClothing(ped, clothingConfig)
-    for i=1, #(clothingConfig.components) do
+    for i = 1, #(clothingConfig.components) do
         local component = clothingConfig.components[i]
         SetPedComponentVariation(ped, component.componentId, component.drawableId, component.textureId, 0)
     end
-    for i=1, #(clothingConfig.props) do
+    for i = 1, #(clothingConfig.props) do
         local prop = clothingConfig.props[i]
         SetPedPropIndex(ped, prop.propId, prop.drawableId, prop.textureId, true)
     end
@@ -26,8 +26,8 @@ function spawnNPC(npcConfig)
     end
 
     local ped = CreatePed(4, pedModel, npcConfig.coords, npcConfig.heading, false, true)
-    SetEntityInvincible(ped, true) 
-    FreezeEntityPosition(ped, true) 
+    SetEntityInvincible(ped, true)
+    FreezeEntityPosition(ped, true)
     SetEntityCanBeDamaged(ped, false)
     SetEntityProofs(ped, true, true, true, true, true, true, true, true)
     SetPedDefaultComponentVariation(ped)
@@ -40,7 +40,7 @@ function spawnNPC(npcConfig)
         Wait(0)
     end
 
-    SetBlockingOfNonTemporaryEvents(ped, true)  
+    SetBlockingOfNonTemporaryEvents(ped, true)
     TaskPlayAnim(ped, npcConfig.animationDict, npcConfig.animation, 8.0, -8.0, -1, 1, 0, false, false, false)
     SetModelAsNoLongerNeeded(pedModel)
     RemoveAnimDict(npcConfig.animationDict)
@@ -51,10 +51,10 @@ CreateThread(function()
     while true do
         Wait(1000) -- Check every second
 
-        local playerPed = PlayerPedId() 
+        local playerPed = PlayerPedId()
         local playerCoords = GetEntityCoords(playerPed)
 
-        for i =1, #(Config.NPCs) do
+        for i = 1, #(Config.NPCs) do
             local npcConfig = Config.NPCs[i]
             local npc = spawnedNPCs[i]
             local npcCoords = vector3(npcConfig.coords.x, npcConfig.coords.y, npcConfig.coords.z)
@@ -84,12 +84,12 @@ AddEventHandler("onResourceStop", function(resourceName)
         return
     end
 
-    for i=1, #spawnedNPCs do
+    for i = 1, #spawnedNPCs do
         DeleteEntity(spawnedNPCs[i].ped)
     end
 end)
 
-AddEventHandler('onResourceStart', function (resourceName)
+AddEventHandler('onResourceStart', function(resourceName)
     if resourceName == GetCurrentResourceName() then
         ExecuteCommand('sets tags "LNWK Peds"')
     end
@@ -97,10 +97,11 @@ end)
 
 -- Bellow this point will contain all Commands.
 RegisterCommand('vec4', function()
-    local playerPed = PlayerPedId() 
-    local playerCoords = GetEntityCoords(playerPed)  
-    local playerHeading = GetEntityHeading(playerPed)  
-    local positionText = string.format("vec4(%.2f, %.2f, %.2f, %.2f)", playerCoords.x, playerCoords.y, playerCoords.z -1.0, playerHeading)
+    local playerPed = PlayerPedId()
+    local playerCoords = GetEntityCoords(playerPed)
+    local playerHeading = GetEntityHeading(playerPed)
+    local positionText = string.format("vec4(%.2f, %.2f, %.2f, %.2f)", playerCoords.x, playerCoords.y,
+        playerCoords.z - 1.0, playerHeading)
 
     -- NUI
     SendNUIMessage({
@@ -109,16 +110,16 @@ RegisterCommand('vec4', function()
     })
 
     -- noty
-    TriggerEvent("chat:addMessage",{
-        args = {"Position copied to clipboard: ".. positionText}
+    TriggerEvent("chat:addMessage", {
+        args = { "Position copied to clipboard: " .. positionText }
     })
 end, false)
 
 RegisterCommand('vec3', function()
-    local playerPed = PlayerPedId() 
-    local playerCoords = GetEntityCoords(playerPed)  
-    local playerHeading = GetEntityHeading(playerPed)  
-    local positionText = string.format("vec3(%.2f, %.2f, %.2f)", playerCoords.x, playerCoords.y, playerCoords.z -1.0)
+    local playerPed = PlayerPedId()
+    local playerCoords = GetEntityCoords(playerPed)
+    local playerHeading = GetEntityHeading(playerPed)
+    local positionText = string.format("vec3(%.2f, %.2f, %.2f)", playerCoords.x, playerCoords.y, playerCoords.z - 1.0)
 
     -- NUI
     SendNUIMessage({
@@ -127,15 +128,15 @@ RegisterCommand('vec3', function()
     })
 
     -- noty
-    TriggerEvent("chat:addMessage",{
-        args = {"Position copied to clipboard: ".. positionText}
+    TriggerEvent("chat:addMessage", {
+        args = { "Position copied to clipboard: " .. positionText }
     })
 end, false)
 
 RegisterCommand('vec2', function()
-    local playerPed = PlayerPedId() 
-    local playerCoords = GetEntityCoords(playerPed)  
-    local playerHeading = GetEntityHeading(playerPed)  
+    local playerPed = PlayerPedId()
+    local playerCoords = GetEntityCoords(playerPed)
+    local playerHeading = GetEntityHeading(playerPed)
     local positionText = string.format("vec2(%.2f, %.2f)", playerCoords.x, playerCoords.y)
 
     -- NUI
@@ -145,20 +146,26 @@ RegisterCommand('vec2', function()
     })
 
     -- noty
-    TriggerEvent("chat:addMessage",{
-        args = {"Position copied to clipboard: ".. positionText}
+    TriggerEvent("chat:addMessage", {
+        args = { "Position copied to clipboard: " .. positionText }
     })
 end, false)
 
-RegisterCommand('showui', function ()
+TriggerEvent('chat:addSuggestion', '/ui', 'Update UI with a message (true/false)', {
+    { name = "update", help = "true or false" }
+})
+RegisterCommand('ui', function(source, args)
+    local update = args[1] or "No update message"
     SendNUIMessage({
-        action = "show",
-        data = "TEST"
+        action = "update",
+        update = update
     })
 end)
-    RegisterNUICallback('close', function (data, cb)
-        print('UI HAS CLOSED')
-        cb('ok')
 
-    
+RegisterNUICallback('close', function()
+    SetNuiFocus(false, false)
+end)
+
+RegisterNUICallback('open', function()
+    SetNuiFocus(true, true)
 end)
