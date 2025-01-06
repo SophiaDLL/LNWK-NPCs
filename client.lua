@@ -54,7 +54,8 @@ CreateThread(function()
         local playerPed = PlayerPedId() 
         local playerCoords = GetEntityCoords(playerPed)
 
-        for i, npcConfig in ipairs(Config.NPCs) do
+        for i =1, #(Config.NPCs) do
+            local npcConfig = Config.NPCs[i]
             local npc = spawnedNPCs[i]
             local npcCoords = vector3(npcConfig.coords.x, npcConfig.coords.y, npcConfig.coords.z)
             local npcExists = npc and DoesEntityExist(npc.ped)
@@ -67,7 +68,7 @@ CreateThread(function()
             else
                 if npcExists then
                     DeleteEntity(npc.ped) -- Delete NPC if out of range
-                    spawnedNPCs[i] = nil
+                    table.remove(spawnedNPCs, i)
                 end
             end
         end
