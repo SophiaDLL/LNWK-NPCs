@@ -48,12 +48,32 @@ function spawnNPC(npcConfig)
 end
 
 CreateThread(function()
-   for i=1, #(Config.NPCs) do
-        spawnNPC(Config.NPCs[i])
-    end
+    while true do
+        Wait(1000) -- Check every second
 
-    if GetCurrentResourceName() ~= "LNWK-NPCs" then
-        print("Please dont edit the resource name :(")
+        local playerPed = PlayerPedId()
+        local playerCoords = GetEntityCoords(playerPed)
+
+        for i, npcConfig in ipairs(Config.NPCs) do
+            local npc = spawnedNPCs[i]
+            local npcExists = npc and DoesEntityExist(npc.ped)
+            local distance = #(playerCoords - npcConfig.coords)
+
+            if distance <= 50.0 then
+                if not npcExists then
+                    spawnNPC(npcConfig) -- Spawn NPC if within range and doesn't exist
+                end
+            else
+                if npcExists then
+                    DeleteEntity(npc.ped) -- Delete NPC if out of range
+                    spawnedNPCs[i] = nil
+                end
+            end
+        end
+
+        if GetCurrentResourceName() ~= "LNWK-NPCs" then
+            print("Please dont edit the resource name :(")
+        end
     end
 end)
 
