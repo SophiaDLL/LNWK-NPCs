@@ -82,7 +82,17 @@ function buttonclicked(option, btn, modal) {
 
     switch(btn) {
         case "animation-type-btn":
-            pedData.animation = option;
+            if (option === "Idle A") {
+                pedData.animation = {
+                    name: "Idle A", 
+                    dictionary: "anim@mp_player_intcelebrationmale@idle_a"
+                };
+            } else if (option === "Idle B") {
+                pedData.animation = {
+                    name: "Idle B", 
+                    dictionary: "anim@mp_player_intcelebrationmale@idle_b"
+                };
+            }
             break;
         case "gender-btn":
             pedData.gender = option;
@@ -97,10 +107,18 @@ function buttonclicked(option, btn, modal) {
 }
 
 function submitPed() {
-    pedData.name = $("#name").text()
+    pedData.name = $("#name").val();
     fetch(`https://${GetParentResourceName()}/spawnPed`, {
         method: 'POST',
         headers: {'Content-Type': 'application/json; charset=UTF-8'},
         body: JSON.stringify(pedData)
     }).then(resp => resp.json())
+      .then(response => {
+          console.log('Ped Spawned:', response);
+          closeMenu(); 
+      })
+      .catch(err => {
+          console.error('Error spawning ped:', err);
+          closeMenu();
+      });
 }

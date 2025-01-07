@@ -4,7 +4,7 @@ game 'gta5'
 author 'laurelnwk.com/team'
 description 'A Simple FiveM Script that allows you spawn Both Multi-Player & Single-Player Peds'
 lua54 'yes'
-version '1.3.0b'
+version '1.2.3'
 
 
 

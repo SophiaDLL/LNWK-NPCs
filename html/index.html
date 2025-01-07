@@ -7,14 +7,14 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="script.js" type="text/javascript"></script>
-        <title>LNWK FiveM MP/SP Ped Creator</title>
+        <title>LNWK SP & MP NPC SPAWNER</title>
     </head>
     <body style="background:rgba(225, 4, 4, 0)">
 
         <div id="groups-container" style="display: none;">
             <div class="groups-border">
                 <i id="close-btn" class="fa-solid fa-circle-xmark" style="font-size: 24px; color: rgb(245, 105, 105)"></i>
-                <div class="npc-header">LNWK FiveM MP/SP Ped Creator</div>
+                <div class="npc-header">LNWK SP & MP NPC SPAWNER</div>
 
                 <div class="form-container" style="padding: 20px;">
                     <div class="form-group">
@@ -52,11 +52,11 @@
                 <h2>Select Ped Type</h2>
                 <div class="modal-options">
                     <p>MP PED</p>
-                    <button class="modal-btn" onclick="buttonclicked('MP PED', 'ped-type-btn', 'ped-type-modal')">MP PED</button>
+                    <button class="modal-btn" onclick="buttonclicked('true', 'ped-type-btn', 'ped-type-modal')">MP PED</button>
                 </div>
                 <div class="modal-options">
                     <p>SP PED</p>
-                    <button class="modal-btn" onclick="buttonclicked('SP PED', 'ped-type-btn', 'ped-type-modal')">SP PED</button>
+                    <button class="modal-btn" onclick="buttonclicked('false', 'ped-type-btn', 'ped-type-modal')">SP PED</button>
                 </div>
             </div>
         </div>
@@ -72,13 +72,13 @@
                     </div>
                     <div class="modal-options">
                         <img src="https://files.fivemerr.com/images/f1ee432e-5016-48c5-9d6c-32a660160eff.jpeg" alt="Ped Model 1" />
-                        <p>male_sherif</p>
-                        <button class="modal-btn" onclick="buttonclicked('male_sherif', 'ped-model-btn', 'ped-model-modal')">male_sherif</button>
+                        <p>male sherif</p>
+                        <button class="modal-btn" onclick="buttonclicked('S_M_Y_Sheriff_01', 'ped-model-btn', 'ped-model-modal')">male sherif</button>
                     </div>
                     <div class="modal-options">
                         <img src="https://files.fivemerr.com/images/f1ee432e-5016-48c5-9d6c-32a660160eff.jpeg" alt="Ped Model 1" />
-                        <p>female_sherif</p>
-                        <button class="modal-btn" onclick="buttonclicked('female_sherif', 'ped-model-btn', 'ped-model-modal')">female_sherif</button>
+                        <p>female sherif</p>
+                        <button class="modal-btn" onclick="buttonclicked('S_F_Y_Sheriff_01', 'ped-model-btn', 'ped-model-modal')">female sherif</button>
                     </div>                    
                 </div>
             </div>
@@ -111,12 +111,12 @@
                 <h2>Select Animation Type</h2>
                 <div class="modal-scroll-container">
                     <div class="modal-options">
-                        <p>Idle A</p>
-                        <button class="modal-btn" onclick="buttonclicked('Idle A', 'animation-type-btn', 'animation-type-modal')">Idle A</button>
+                        <p>Arms Crossed</p>
+                        <button class="modal-btn" onclick="buttonclicked('Idle A', 'animation-type-btn', 'animation-type-modal')">Arms Crossed</button>
                     </div>
                     <div class="modal-options">
-                        <p>Idle B</p>
-                        <button class="modal-btn" onclick="buttonclicked('Idle B', 'animation-type-btn', 'animation-type-modal')">Idle B</button>
+                        <p>Wall Lean</p>
+                        <button class="modal-btn" onclick="buttonclicked('Idle B', 'animation-type-btn', 'animation-type-modal')">Wall Lean</button>
                     </div>
                 </div>
             </div>
