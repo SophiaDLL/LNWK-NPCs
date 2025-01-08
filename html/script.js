@@ -63,19 +63,6 @@ $(document).on("click", ".close-modal", function () {
     $(this).closest('.feature-modal').hide();
 });
 
-$(".modal-btn").on("click", function () {
-    console.log('modal-btn clicked')
-    const selectedOption = $(this).text();
-    console.log(selectedOption);
-    const buttonId = $(this).attr("data-button-id");
-
-    $("#" + buttonId).text("Selected: " + selectedOption);
-
-    $(this).text("Selected: " + selectedOption);
-
-    $(this).closest('.feature-modal').hide();
-});
-
 function buttonclicked(option, btn, modal) {
     $("#" + btn).text("Selected: " + option);
     $("#" + modal).hide();
@@ -105,6 +92,27 @@ function buttonclicked(option, btn, modal) {
             break;
     }
 }
+
+$(".modal-btn").on("click", function () {
+    const thisElement = $(this)
+
+    console.log('modal-btn clicked')
+    const selectedOption = thisElement.text();
+    console.log(selectedOption);
+    const buttonId = thisElement.data("button-id");
+
+    $("#" + buttonId).text("Selected: " + selectedOption);
+
+    thisElement.text("Selected: " + selectedOption);
+
+    thisElement.closest('.feature-modal').hide();
+
+
+    const option = thisElement.data("option")
+    const btn = thisElement.data("btn")
+    const modal = thisElement.data("modal")
+    buttonclicked(option, btn, modal)
+});
 
 // Function to get player position and heading
 function getPlayerPosition() {

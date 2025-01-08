@@ -20,28 +20,27 @@ PLEASE ONLY DONLOAD THE RELEASES FOR FULLY WORKING CONTENT
                 
                 animation = "single_team_loop_boss",  -- This is the animation that would be used both Directory & Animation can be found on plebmasters
                 
-                mpClothing = {
-                    components = {
-                        { componentId = 1, drawableId = 0, textureId = 0 }, -- Masks
-                        { componentId = 3, drawableId = 0, textureId = 0 }, -- Arms
-                        { componentId = 4, drawableId = 1, textureId = 0 }, -- Legs
-                        { componentId = 5, drawableId = 0, textureId = 0 }, -- Bags
-                        { componentId = 6, drawableId = 0, textureId = 0 }, -- Shoes
-                        { componentId = 7, drawableId = 0, textureId = 0 }, -- Accessories
-                        { componentId = 8, drawableId = 15, textureId = 0 }, -- Undershirts
-                        { componentId = 9, drawableId = 0, textureId = 0 }, -- Body Armor
-                        { componentId = 10, drawableId = 0, textureId = 0 }, -- Decals
-                        { componentId = 11, drawableId = 15, textureId = 0 } -- Tops
-                    },
-                    props = {
-                        { propId = 0, drawableId = 3, textureId = 0 }, -- Hats
-                        { propId = 1, drawableId = 0, textureId = 0 }, -- Glasses
-                        { propId = 2, drawableId = 0, textureId = 0 }, -- Ears
-                        { propId = 6, drawableId = 0, textureId = 0 }, -- Watches
-                        { propId = 7, drawableId = 0, textureId = 0 } -- Bracelets
-
-                        -- drawableId = 15 = The number of clothing relevant to the clothing
-                        -- textureId = 0  = The texture that you want to use on the clothing
+              --  mpClothing = {
+              --      components = {
+              --          { componentId = 1, drawableId = 0, textureId = 0 }, -- Masks
+              --          { componentId = 3, drawableId = 0, textureId = 0 }, -- Arms
+              --          { componentId = 4, drawableId = 1, textureId = 0 }, -- Legs
+              --          { componentId = 5, drawableId = 0, textureId = 0 }, -- Bags
+              --          { componentId = 6, drawableId = 0, textureId = 0 }, -- Shoes
+              --          { componentId = 7, drawableId = 0, textureId = 0 }, -- Accessories
+              --          { componentId = 8, drawableId = 15, textureId = 0 }, -- Undershirts
+              --          { componentId = 9, drawableId = 0, textureId = 0 }, -- Body Armor
+              --          { componentId = 10, drawableId = 0, textureId = 0 }, -- Decals
+              --          { componentId = 11, drawableId = 15, textureId = 0 } -- Tops
+              --      },
+              --      props = {
+              --          { propId = 0, drawableId = 3, textureId = 0 }, -- Hats
+              --          { propId = 1, drawableId = 0, textureId = 0 }, -- Glasses
+              --          { propId = 2, drawableId = 0, textureId = 0 }, -- Ears
+              --          { propId = 6, drawableId = 0, textureId = 0 }, -- Watches
+              --          { propId = 7, drawableId = 0, textureId = 0 } -- Bracelets
+              --          -- drawableId = 15 = The number of clothing relevant to the clothing
+              --          -- textureId = 0  = The texture that you want to use on the clothing
 
 -- CORRECT USE OF THE /PlacePed Command
 

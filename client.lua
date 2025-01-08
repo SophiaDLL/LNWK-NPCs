@@ -173,10 +173,7 @@ RegisterNUICallback('open', function()
 end)
 
 RegisterNUICallback('spawnPed', function(pedData, cb)
-    print(json.encode(pedData))
-    -- spawn the ped like before
-
-    print('ped added')
+    TriggerServerEvent("addNewPed", pedData)
     cb("")
 end)
 

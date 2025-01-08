@@ -1,18 +1,16 @@
 -- DO NOT CHANGE THE BELLOW IF YOU DO NOT KNOW WHAT YOU ARE DOING
-RegisterCommand('PlacePed', function(source, args, rawCommand)
-    local pedName = args[1] 
-    local pedType = args[2] 
-    local pedGender = args[3] 
 
-    if not pedName or not pedType or not pedGender then
+local function addNewPed(source, pedName, pedType, pedGender)
+    print("test", source, pedName, pedType, pedGender)
+    if not pedName or not pedGender then
         TriggerClientEvent('chat:addMessage', source, {
             args = { '^8ERROR', 'Invalid syntax. Use /PlacePed "name" "type" "gender" NAME = PED NAME IN CFG, TYPE = MP OR SP PED, GENDER = MALE OR FEMALE.. PROPER USE OF COMMAND /PlacePed "TEST" "true" "male"' }
         })
         return
     end
 
-    local useMPClothing = (pedType:lower() == "true")
-    if pedType:lower() ~= "true" and pedType:lower() ~= "false" then
+    local useMPClothing = pedType
+    if pedType == nil then
         TriggerClientEvent('chat:addMessage', source, {
             args = { '^8ERROR', 'Invalid type. Use "true" or "false" for type.' }
         })
@@ -88,4 +86,27 @@ RegisterCommand('PlacePed', function(source, args, rawCommand)
         })
         print("Failed to save Ped configuration.")
     end
+end
+
+
+RegisterCommand('PlacePed', function(source, args, rawCommand)
+    local pedName = args[1]
+    local pedType = args[2] == "true"
+    local pedGender = args[3]
+    addNewPed(source, pedName, pedType, pedGender)
 end, false)
+
+RegisterNetEvent("addNewPed", function(pedData)
+    local src = source
+    local pedName = pedData.name
+    local pedType = pedData.ped -- true is mp-ped false is non mp ped.
+    local pedGender = pedData.gender
+    addNewPed(src, pedName, pedType, pedGender)
+end)
+
+-- setting kvp:
+-- local data = json.encode(theConfigOrSomeShit)
+-- SetResourceKvp("pedConfig", data)
+
+-- get kvp
+local data = json.decode(GetResourceKvpString("pedConfig"))
