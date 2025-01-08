@@ -179,3 +179,20 @@ RegisterNUICallback('spawnPed', function(pedData, cb)
     print('ped added')
     cb("")
 end)
+
+RegisterNUICallback('getPlayerCoords', function(_, cb)
+    local playerPed = PlayerPedId()
+    local playerCoords = GetEntityCoords(playerPed)
+    local playerHeading = GetEntityHeading(playerPed)
+
+    -- Send the coordinates and heading back to JS
+    cb({
+        x = playerCoords.x,
+        y = playerCoords.y,
+        z = playerCoords.z,
+        h = playerHeading
+    })
+end)
+
+
+

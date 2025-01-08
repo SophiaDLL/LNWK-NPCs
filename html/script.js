@@ -106,19 +106,63 @@ function buttonclicked(option, btn, modal) {
     }
 }
 
-function submitPed() {
-    pedData.name = $("#name").val();
-    fetch(`https://${GetParentResourceName()}/spawnPed`, {
-        method: 'POST',
-        headers: {'Content-Type': 'application/json; charset=UTF-8'},
-        body: JSON.stringify(pedData)
-    }).then(resp => resp.json())
-      .then(response => {
-          console.log('Ped Spawned:', response);
-          closeMenu(); 
-      })
-      .catch(err => {
-          console.error('Error spawning ped:', err);
-          closeMenu();
-      });
+// Function to get player position and heading
+function getPlayerPosition() {
+    return new Promise((resolve, reject) => {
+        // Request the player's position and heading from the client
+        fetch(`https://${GetParentResourceName()}/getPlayerPosition`)
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    resolve(data.position); // Return the vector4 data (x, y, z, heading)
+                } else {
+                    reject('Error retrieving player position');
+                }
+            })
+            .catch(reject);
+    });
 }
+
+function submitPed() {
+    // Get name from input field
+    pedData.name = $("#name").val();
+
+    // Send a message to Lua to get player coordinates and heading
+    fetch(`https://${GetParentResourceName()}/getPlayerCoords`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json; charset=UTF-8' }
+    })
+    .then(resp => resp.json())
+    .then(data => {
+        // Add coordinates and heading to pedData
+        pedData.coords = {
+            x: data.x,
+            y: data.y,
+            z: data.z,
+            h: data.h
+        };
+
+        // Send the pedData (which now includes coordinates) to the server to spawn the NPC
+        fetch(`https://${GetParentResourceName()}/spawnPed`, {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json; charset=UTF-8'},
+            body: JSON.stringify(pedData)
+        }).then(resp => resp.json())
+          .then(response => {
+              // No console print here, simply close the menu
+              closeMenu(); 
+          })
+          .catch(err => {
+              // If there's an error, close the menu
+              console.error('Error spawning ped:', err);
+              closeMenu();
+          });
+    })
+    .catch(err => {
+        // If there's an error fetching player coordinates, close the menu
+        console.error('Error fetching player coordinates:', err);
+    });
+}
+
+
+
