@@ -2,6 +2,96 @@ Config = {}
 
 Config.NPCs = {
     {
+        name = "asd", -- Name for the NPC
+        useMPClothing = false, -- Enable//Disable MP Clothing usage
+        useMPGender = "male", -- Gender for MP Clothing
+        model = "S_M_Y_Sheriff_01", -- Spawned Ped Model
+        coords = vector4(1686.791260, 4769.208984, 40.917236, 99.212593), -- Ped Location X, Y, Z, H
+        animationDict = "anim@heists@heist_corona@single_team", -- Animation Directory
+        animation = "single_team_loop_boss", -- Animation
+        mpClothing = {
+            components = { -- Clothing components
+                { componentId = 1, drawableId = 3, textureId = 0 }, -- Masks
+                { componentId = 3, drawableId = 0, textureId = 0 }, -- Arms
+                { componentId = 4, drawableId = 18, textureId = 0 }, -- Legs
+                { componentId = 5, drawableId = 0, textureId = 0 }, -- Bags
+                { componentId = 6, drawableId = 0, textureId = 0 }, -- Shoes
+                { componentId = 7, drawableId = 0, textureId = 0 }, -- Accessories
+                { componentId = 8, drawableId = 10, textureId = 0 }, -- Undershirts
+                { componentId = 9, drawableId = 0, textureId = 0 }, -- Body Armor
+                { componentId = 10, drawableId = 0, textureId = 0 }, -- Decals
+                { componentId = 11, drawableId = 23, textureId = 0 } -- Tops
+            },
+            props = { -- Props
+                { propId = 0, drawableId = 5, textureId = 0 }, -- Hats
+                { propId = 1, drawableId = 0, textureId = 0 }, -- Glasses
+                { propId = 2, drawableId = 0, textureId = 0 }, -- Ears
+                { propId = 6, drawableId = 0, textureId = 0 }, -- Watches
+                { propId = 7, drawableId = 0, textureId = 0 } -- Bracelets
+            }
+        }
+    },
+    {
+        name = "asd", -- Name for the NPC
+        useMPClothing = true, -- Enable//Disable MP Clothing usage
+        useMPGender = "male", -- Gender for MP Clothing
+        model = "mp_m_freemode_01", -- Spawned Ped Model
+        coords = vector4(1692.936279, 4770.962402, 40.917236, 93.543304), -- Ped Location X, Y, Z, H
+        animationDict = "anim@heists@heist_corona@single_team", -- Animation Directory
+        animation = "single_team_loop_boss", -- Animation
+        mpClothing = {
+            components = { -- Clothing components
+                { componentId = 1, drawableId = 3, textureId = 0 }, -- Masks
+                { componentId = 3, drawableId = 0, textureId = 0 }, -- Arms
+                { componentId = 4, drawableId = 18, textureId = 0 }, -- Legs
+                { componentId = 5, drawableId = 0, textureId = 0 }, -- Bags
+                { componentId = 6, drawableId = 0, textureId = 0 }, -- Shoes
+                { componentId = 7, drawableId = 0, textureId = 0 }, -- Accessories
+                { componentId = 8, drawableId = 10, textureId = 0 }, -- Undershirts
+                { componentId = 9, drawableId = 0, textureId = 0 }, -- Body Armor
+                { componentId = 10, drawableId = 0, textureId = 0 }, -- Decals
+                { componentId = 11, drawableId = 23, textureId = 0 } -- Tops
+            },
+            props = { -- Props
+                { propId = 0, drawableId = 5, textureId = 0 }, -- Hats
+                { propId = 1, drawableId = 0, textureId = 0 }, -- Glasses
+                { propId = 2, drawableId = 0, textureId = 0 }, -- Ears
+                { propId = 6, drawableId = 0, textureId = 0 }, -- Watches
+                { propId = 7, drawableId = 0, textureId = 0 } -- Bracelets
+            }
+        }
+    },
+    {
+        name = "asdasd", -- Name for the NPC
+        useMPClothing = true, -- Enable//Disable MP Clothing usage
+        useMPGender = "male", -- Gender for MP Clothing
+        model = "mp_m_freemode_01", -- Spawned Ped Model
+        coords = vector4(1686.975830, 4759.305664, 40.849854, 90.708656), -- Ped Location X, Y, Z, H
+        animationDict = "anim@heists@heist_corona@single_team", -- Animation Directory
+        animation = "single_team_loop_boss", -- Animation
+        mpClothing = {
+            components = { -- Clothing components
+                { componentId = 1, drawableId = 3, textureId = 0 }, -- Masks
+                { componentId = 3, drawableId = 0, textureId = 0 }, -- Arms
+                { componentId = 4, drawableId = 18, textureId = 0 }, -- Legs
+                { componentId = 5, drawableId = 0, textureId = 0 }, -- Bags
+                { componentId = 6, drawableId = 0, textureId = 0 }, -- Shoes
+                { componentId = 7, drawableId = 0, textureId = 0 }, -- Accessories
+                { componentId = 8, drawableId = 10, textureId = 0 }, -- Undershirts
+                { componentId = 9, drawableId = 0, textureId = 0 }, -- Body Armor
+                { componentId = 10, drawableId = 0, textureId = 0 }, -- Decals
+                { componentId = 11, drawableId = 23, textureId = 0 } -- Tops
+            },
+            props = { -- Props
+                { propId = 0, drawableId = 5, textureId = 0 }, -- Hats
+                { propId = 1, drawableId = 0, textureId = 0 }, -- Glasses
+                { propId = 2, drawableId = 0, textureId = 0 }, -- Ears
+                { propId = 6, drawableId = 0, textureId = 0 }, -- Watches
+                { propId = 7, drawableId = 0, textureId = 0 } -- Bracelets
+            }
+        }
+    },
+    {
         name = "fa", -- Name for the NPC
         useMPClothing = true, -- Enable//Disable MP Clothing usage
         useMPGender = "female", -- Gender for MP Clothing

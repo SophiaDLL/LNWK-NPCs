@@ -184,3 +184,20 @@ body {
         padding: 10px;
     }
 }
+
+input[type="text"] {
+    width: 100%;
+    padding: 12px;  /* Same padding as the buttons */
+    font-size: 14px;  /* Ensure font size is consistent */
+    background-color: #cc0069;  /* Same background color as the buttons */
+    color: #d1d1d1;  /* Same text color as buttons */
+    border: none;  /* Remove default border */
+    border-radius: 8px;  /* Same border radius as buttons */
+    box-sizing: border-box;  /* Ensure it doesn't overflow the container */
+    transition: background-color 0.3s ease;  /* Smooth transition for background color */
+}
+
+input[type="text"]:focus {
+    outline: none;  /* Remove focus outline */
+    background-color: #ff1fb0;  /* Lighter background when focused */
+}

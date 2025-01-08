@@ -1,5 +1,3 @@
--- DO NOT CHANGE THE BELLOW IF YOU DO NOT KNOW WHAT YOU ARE DOING
-
 local function addNewPed(source, pedName, pedType, pedGender)
     print("test", source, pedName, pedType, pedGender)
     if not pedName or not pedGender then
@@ -104,9 +102,13 @@ RegisterNetEvent("addNewPed", function(pedData)
     addNewPed(src, pedName, pedType, pedGender)
 end)
 
+
+
+
+-- LOK
 -- setting kvp:
 -- local data = json.encode(theConfigOrSomeShit)
 -- SetResourceKvp("pedConfig", data)
 
 -- get kvp
-local data = json.decode(GetResourceKvpString("pedConfig"))
+-- local data = json.decode(GetResourceKvpString("pedConfig"))

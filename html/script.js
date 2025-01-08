@@ -88,7 +88,7 @@ function buttonclicked(option, btn, modal) {
             pedData.model = option;
             break;
         case "ped-type-btn":
-            pedData.ped = option
+            pedData.ped = option;
             break;
     }
 }
@@ -106,7 +106,6 @@ $(".modal-btn").on("click", function () {
     thisElement.text("Selected: " + selectedOption);
 
     thisElement.closest('.feature-modal').hide();
-
 
     const option = thisElement.data("option")
     const btn = thisElement.data("btn")
@@ -132,17 +131,16 @@ function getPlayerPosition() {
 }
 
 function submitPed() {
-    // Get name from input field
+   
     pedData.name = $("#name").val();
 
-    // Send a message to Lua to get player coordinates and heading
     fetch(`https://${GetParentResourceName()}/getPlayerCoords`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json; charset=UTF-8' }
     })
     .then(resp => resp.json())
     .then(data => {
-        // Add coordinates and heading to pedData
+       
         pedData.coords = {
             x: data.x,
             y: data.y,
@@ -150,27 +148,40 @@ function submitPed() {
             h: data.h
         };
 
-        // Send the pedData (which now includes coordinates) to the server to spawn the NPC
         fetch(`https://${GetParentResourceName()}/spawnPed`, {
             method: 'POST',
             headers: {'Content-Type': 'application/json; charset=UTF-8'},
             body: JSON.stringify(pedData)
         }).then(resp => resp.json())
           .then(response => {
-              // No console print here, simply close the menu
               closeMenu(); 
+              resetButtons(); 
           })
           .catch(err => {
-              // If there's an error, close the menu
               console.error('Error spawning ped:', err);
               closeMenu();
+              resetButtons(); 
           });
     })
     .catch(err => {
-        // If there's an error fetching player coordinates, close the menu
         console.error('Error fetching player coordinates:', err);
+        resetButtons(); 
     });
 }
 
+function resetButtons() {
+    document.getElementById('ped-type-btn').innerText = 'Ped Type';
+    document.getElementById('ped-model-btn').innerText = 'Ped Model';
+    document.getElementById('gender-btn').innerText = 'Gender';
+    document.getElementById('animation-type-btn').innerText = 'Animation Type';
 
+    document.getElementById('name').value = '';  
+    closeModals();
+}
 
+function closeModals() {
+    const modals = document.querySelectorAll('.feature-modal');
+    modals.forEach(modal => {
+        modal.style.display = 'none';
+    });
+}
