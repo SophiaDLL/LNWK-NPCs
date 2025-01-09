@@ -3,7 +3,9 @@ let pedData = {
     ped: undefined,
     model: undefined,
     animation: undefined,
-    gender: undefined 
+    gender: undefined,
+    enableBlip: undefined,
+    blipIcon: undefined
 };
 
 window.addEventListener('message', function (event) {
@@ -67,7 +69,7 @@ function buttonclicked(option, btn, modal) {
     $("#" + btn).text("Selected: " + option);
     $("#" + modal).hide();
 
-    switch(btn) {
+    switch (btn) {
         case "animation-type-btn":
             if (option === "Idle A") {
                 pedData.animation = {
@@ -99,9 +101,9 @@ function buttonclicked(option, btn, modal) {
 }
 
 $(".modal-btn").on("click", function () {
-    const thisElement = $(this)
+    const thisElement = $(this);
 
-    console.log('modal-btn clicked')
+    console.log('modal-btn clicked');
     const selectedOption = thisElement.text();
     console.log(selectedOption);
     const buttonId = thisElement.data("button-id");
@@ -112,10 +114,10 @@ $(".modal-btn").on("click", function () {
 
     thisElement.closest('.feature-modal').hide();
 
-    const option = thisElement.data("option")
-    const btn = thisElement.data("btn")
-    const modal = thisElement.data("modal")
-    buttonclicked(option, btn, modal)
+    const option = thisElement.data("option");
+    const btn = thisElement.data("btn");
+    const modal = thisElement.data("modal");
+    buttonclicked(option, btn, modal);
 });
 
 // Function to get player position and heading
@@ -135,9 +137,13 @@ function getPlayerPosition() {
     });
 }
 
+// Updated submitPed Function
 function submitPed() {
-   
     pedData.name = $("#name").val();
+    pedData.enableBlip = $("#enable-blip").is(":checked"); // Read the blip enabled checkbox
+    pedData.blipIcon = parseInt($("#blip-icon").val()) || 1; // Read the blip icon input
+
+    console.log("Submitting Ped Data:", pedData); // Debug the data being sent to the server
 
     fetch(`https://${GetParentResourceName()}/getPlayerCoords`, {
         method: 'POST',
@@ -145,7 +151,6 @@ function submitPed() {
     })
     .then(resp => resp.json())
     .then(data => {
-       
         pedData.coords = {
             x: data.x,
             y: data.y,
@@ -155,24 +160,27 @@ function submitPed() {
 
         fetch(`https://${GetParentResourceName()}/spawnPed`, {
             method: 'POST',
-            headers: {'Content-Type': 'application/json; charset=UTF-8'},
+            headers: { 'Content-Type': 'application/json; charset=UTF-8' },
             body: JSON.stringify(pedData)
         }).then(resp => resp.json())
           .then(response => {
-              closeMenu(); 
-              resetButtons(); 
+              console.log("Server Response:", response); // Debug the server's response
+              closeMenu();
+              resetButtons();
           })
           .catch(err => {
-              console.error('Error spawning ped:', err);
+              console.error("Error spawning ped:", err);
               closeMenu();
-              resetButtons(); 
+              resetButtons();
           });
     })
     .catch(err => {
-        console.error('Error fetching player coordinates:', err);
-        resetButtons(); 
+        console.error("Error fetching player coordinates:", err);
+        resetButtons();
     });
 }
+
+
 // THIS RESETS THE BUTTONS TO DEFAULT
 function resetButtons() {
     document.getElementById('ped-type-btn').innerText = 'Ped Type';
@@ -181,6 +189,8 @@ function resetButtons() {
     document.getElementById('animation-type-btn').innerText = 'Animation Type';
 
     document.getElementById('name').value = '';  
+    document.getElementById('enable-blip').checked = false; // Reset Enable Blip
+    document.getElementById('blip-icon').value = '1'; // Reset Blip Icon
     closeModals();
 }
 

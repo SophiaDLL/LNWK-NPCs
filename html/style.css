@@ -99,7 +99,7 @@ body {
     border-radius: 10px;
     position: relative;
     width: 80%;
-    max-width: 600px;
+    max-width: 800px; /* Increased the max width for better spacing */
     overflow-y: auto;
     max-height: 80vh;
     display: flex;
@@ -124,35 +124,45 @@ body {
     max-height: 60vh;
     overflow-y: auto;
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+    justify-items: center;
+    padding: 10px;
 }
 
 .modal-options {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    margin-bottom: 15px;
+    justify-content: center;
     width: 100%;
-    max-width: 500px;
+    text-align: center;
+    margin-bottom: 10px;
 }
 
 .modal-options img {
-    width: 50px;
-    height: 50px;
-    object-fit: cover;
+    width: 100%;
+    max-width: 150px; /* Set a maximum width to prevent the images from becoming too large */
+    height: auto;      /* Maintain aspect ratio */
+    object-fit: contain;  /* Ensure images don't get distorted */
+    margin-bottom: 10px;
 }
 
 .modal-btn {
     background-color: #ff1fb0;
     border: none;
     color: white;
-    padding: 8px 16px;
+    padding: 10px;
     font-size: 14px;
+    width: 100px; /* Button width to match the image width */
+    height: 40px; /* Adjust height for better alignment */
     border-radius: 8px;
     cursor: pointer;
-    margin-left: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
 }
 
 .modal-btn:hover {
@@ -167,7 +177,7 @@ body {
     padding: 20px;
     overflow: hidden;
     width: 80%;
-    max-width: 600px;
+    max-width: 800px;
     max-height: 80vh;
     box-shadow: 0 0 40px rgba(255, 255, 255, 0.6);
     z-index: 1001;
@@ -179,6 +189,19 @@ body {
         height: auto;
     }
 
+    .modal-options img {
+        max-width: 120px; /* Adjust image size for smaller screens */
+    }
+
+    .modal-btn {
+        width: 90px; /* Adjust width for smaller screens */
+        height: 35px; /* Adjust height for smaller screens */
+    }
+
+    .modal-scroll-container {
+        grid-template-columns: repeat(2, 1fr); /* Reduce the number of columns for smaller screens */
+    }
+
     button, input, select {
         font-size: 12px;
         padding: 10px;
@@ -187,17 +210,43 @@ body {
 
 input[type="text"] {
     width: 100%;
-    padding: 12px;  /* Same padding as the buttons */
-    font-size: 14px;  /* Ensure font size is consistent */
-    background-color: #cc0069;  /* Same background color as the buttons */
-    color: #d1d1d1;  /* Same text color as buttons */
-    border: none;  /* Remove default border */
-    border-radius: 8px;  /* Same border radius as buttons */
-    box-sizing: border-box;  /* Ensure it doesn't overflow the container */
-    transition: background-color 0.3s ease;  /* Smooth transition for background color */
+    padding: 12px;
+    font-size: 14px;
+    background-color: #cc0069;
+    color: #d1d1d1;
+    border: none;
+    border-radius: 8px;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease;
+    margin-bottom: 10px;  /* Add space between the input box and the button */
 }
 
 input[type="text"]:focus {
-    outline: none;  /* Remove focus outline */
-    background-color: #ff1fb0;  /* Lighter background when focused */
+    outline: none;
+    background-color: #ff1fb0;
+}
+
+/* Blip Icon Text Box Alignment */
+.blip-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+/* Ensure Blip Icon input box is the same size as the rest of the input boxes */
+#blip-icon {
+    width: 100%;  /* Ensure it takes up the full width of the container */
+    padding: 12px;  /* Same padding as other input boxes */
+    font-size: 14px;  /* Same font size */
+    background-color: #333;  /* Consistent background color */
+    color: #e6e6e6;  /* Same text color */
+    border-radius: 5px;  /* Same border radius */
+    border: 1px solid #ccc;  /* Same border style */
+    box-sizing: border-box;  /* Ensures the padding is included in the width */
+}
+
+.blip-container button:hover {
+    background-color: #ff1fb0;
 }

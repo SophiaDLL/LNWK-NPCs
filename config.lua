@@ -1,6 +1,70 @@
 Config = {}
 
 Config.NPCs = {
+        {
+            name = "asd",
+            useMPClothing = false,
+            useMPGender = "Male",
+            model = "u_m_y_juggernaut_01",
+            coords = vector4(-1689.31, -1057.62, 12.07, 113.39),
+            animationDict = "amb@world_human_cheering@male_a",
+            animation = "base",
+            enableBlip = true,
+            blipIcon = 1,
+            mpClothing = { 
+                components = {
+                    { componentId = 1, drawableId = 3, textureId = 0 },
+                    { componentId = 3, drawableId = 0, textureId = 0 },
+                    { componentId = 4, drawableId = 18, textureId = 0 },
+                    { componentId = 5, drawableId = 0, textureId = 0 },
+                    { componentId = 6, drawableId = 0, textureId = 0 },
+                    { componentId = 7, drawableId = 0, textureId = 0 },
+                    { componentId = 8, drawableId = 10, textureId = 0 },
+                    { componentId = 9, drawableId = 0, textureId = 0 },
+                    { componentId = 10, drawableId = 0, textureId = 0 },
+                    { componentId = 11, drawableId = 23, textureId = 0 }
+                },
+                props = {
+                    { propId = 0, drawableId = 5, textureId = 0 },
+                    { propId = 1, drawableId = 0, textureId = 0 },
+                    { propId = 2, drawableId = 0, textureId = 0 },
+                    { propId = 6, drawableId = 0, textureId = 0 },
+                    { propId = 7, drawableId = 0, textureId = 0 }
+                }
+            }
+        },
+        {
+            name = "Jesus",
+            useMPClothing = false,
+            useMPGender = "Female",
+            model = "CSB_Mimi",
+            coords = vector4(-1688.00, -1055.74, 12.09, 141.73),
+            animationDict = "amb@world_human_cheering@male_a",
+            animation = "base",
+            enableBlip = true,
+            blipIcon = 173,
+            mpClothing = { 
+                components = {
+                    { componentId = 1, drawableId = 3, textureId = 0 },
+                    { componentId = 3, drawableId = 0, textureId = 0 },
+                    { componentId = 4, drawableId = 18, textureId = 0 },
+                    { componentId = 5, drawableId = 0, textureId = 0 },
+                    { componentId = 6, drawableId = 0, textureId = 0 },
+                    { componentId = 7, drawableId = 0, textureId = 0 },
+                    { componentId = 8, drawableId = 10, textureId = 0 },
+                    { componentId = 9, drawableId = 0, textureId = 0 },
+                    { componentId = 10, drawableId = 0, textureId = 0 },
+                    { componentId = 11, drawableId = 23, textureId = 0 }
+                },
+                props = {
+                    { propId = 0, drawableId = 5, textureId = 0 },
+                    { propId = 1, drawableId = 0, textureId = 0 },
+                    { propId = 2, drawableId = 0, textureId = 0 },
+                    { propId = 6, drawableId = 0, textureId = 0 },
+                    { propId = 7, drawableId = 0, textureId = 0 }
+                }
+            }
+        },
     {
         name = "Police NPC Male", -- Name for the NPC This can be ANYTHING
         useMPClothing = false, -- Enable//Disable MP Clothing usage
@@ -9,6 +73,8 @@ Config.NPCs = {
         coords = vector4(428.21, -981.27, 29.71, 88.54), -- Sets the Ped Location X,y,z,H
         animationDict = "amb@world_human_maid_clean@base", -- Animation Directory  ( https://forge.plebmasters.de/animations )
         animation = "base", -- Animations  ( https://forge.plebmasters.de/animations )
+        enableBlip = false,
+        blipIcon = 8,
         mpClothing = {
             components = {  -- This is all clothing  (This applys for mp/sp peds)
                 { componentId = 1, drawableId = 3, textureId = 0 }, -- Masks
@@ -39,6 +105,8 @@ Config.NPCs = {
         coords = vector4(428.51, -978.83, 29.71, 92.47), -- Sets the Ped Location X,y,z,H
         animationDict = "anim@heists@heist_corona@single_team", -- Animation Directory  ( https://forge.plebmasters.de/animations )
         animation = "single_team_loop_boss",  -- Animations  ( https://forge.plebmasters.de/animations )
+        enableBlip = false,
+        blipIcon = 8,
         mpClothing = {
             components = {  -- This is all clothing  (This applys for mp/sp peds)
                 { componentId = 1, drawableId = 0, textureId = 0 }, -- Masks
