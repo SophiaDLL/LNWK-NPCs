@@ -71,22 +71,102 @@ function buttonclicked(option, btn, modal) {
 
     switch (btn) {
         case "animation-type-btn":
-            if (option === "Idle A") {
+            if (option === "slow_clap") { // ANIMATION = SLOW CLAP
                 pedData.animation = {
-                    animation: "Idle A", 
-                    animationDict: "anim@mp_player_intcelebrationmale@idle_a"
+                    animation: "slow_clap", 
+                    animationDict: "anim@mp_player_intcelebrationfemale@slow_clap"
                 };
-            } else if (option === "Idle B") {
-                pedData.animation = {
-                    animation: "Idle B", 
-                    animationDict: "anim@mp_player_intcelebrationmale@idle_b"
-                };
-            } else if (option === "Clapping") {
+            } else if (option === "Clapping") { // ANIMATION = NORMAL **ISH** CLAP
                 pedData.animation = {
                     animation: "base", 
                     animationDict: "amb@world_human_cheering@male_a"
                 };
-            } 
+            } else if (option === "salute") { // ANIMATION =  salute
+                pedData.animation = {
+                    animation: "salute", 
+                    animationDict: "anim@mp_player_intcelebrationmale@salute"
+                };
+            } else if (option === "face_palm") { // ANIMATION = face_palm
+                pedData.animation = {
+                    animation: "face_palm", 
+                    animationDict: "anim@mp_player_intcelebrationfemale@face_palm"
+                };
+            } else if (option === "gangmember_stickup_loop") { // ANIMATION = gangmember_stickup_loop
+                pedData.animation = {
+                    animation: "gangmember_stickup_loop", 
+                    animationDict: "random@countryside_gang_fight"
+                };
+            } else if (option === "Texting") { // ANIMATION = Texting
+                pedData.animation = {
+                    animation: "base", 
+                    animationDict: "amb@world_human_stand_mobile@male@text@base"
+                };
+            } else if (option === "Crying") { // ANIMATION = Crying
+                pedData.animation = {
+                    animation: "console_end_loop_floyd", 
+                    animationDict: "switch@trevor@floyd_crying"
+                };
+            } else if (option === "ICrossing") { // ANIMATION = Idle Crossing
+                pedData.animation = {
+                    animation: "base", 
+                    animationDict: "amb@code_human_cross_road@male@base"
+                };
+            } else if (option === "PhoneCall") { // ANIMATION = Phone Call
+                pedData.animation = {
+                    animation: "cellphone_call_listen_base", 
+                    animationDict: "switch@michael@bench"
+                };
+            } else if (option === "Shaking") { // ANIMATION = Shaking
+                pedData.animation = {
+                    animation: "idle", 
+                    animationDict: "mp_move@prostitute@f@cokehead"
+                };
+            } else if (option === "Checkout") { // ANIMATION = 
+                pedData.animation = {
+                    animation: "try_shirt_neutral_a", 
+                    animationDict: "mp_clothing@female@shirt"
+                };
+            } else if (option === "Smoking") { // ANIMATION = 
+                pedData.animation = {
+                    animation: "smoke_idle", 
+                    animationDict: "timetable@gardener@smoking_joint"
+                };
+            } else if (option === "Pissing") { // ANIMATION = 
+                pedData.animation = {
+                    animation: "urinal_asifyouneededproof", 
+                    animationDict: "missheist_agency3aig_23"
+                };
+            } else if (option === "Kneeling") { // ANIMATION = 
+                pedData.animation = {
+                    animation: "idle_a", 
+                    animationDict: "amb@medic@standing@kneel@idle_a"
+                };
+            } else if (option === "TTD") { // ANIMATION = 
+                pedData.animation = {
+                    animation: "idle_a", 
+                    animationDict: "amb@medic@standing@tendtodead@idle_a"
+                };
+            } else if (option === "Guard") { // ANIMATION = 
+                pedData.animation = {
+                    animation: "idle_e", 
+                    animationDict: "amb@world_human_guard_patrol@male@idle_b"
+                };
+            } else if (option === "Bird") { // ANIMATION = 
+                pedData.animation = {
+                    animation: "wakeup", 
+                    animationDict: "random@peyote@bird"
+                };
+            } else if (option === "ThumbsUp") { // ANIMATION = 
+                pedData.animation = {
+                    animation: "thumbs_up", 
+                    animationDict: "anim@mp_player_intcelebrationfemale@thumbs_up"
+                };
+            } else if (option === "photography") { // ANIMATION = 
+                pedData.animation = {
+                    animation: "photography", 
+                    animationDict: "anim@mp_player_intcelebrationfemale@photography"
+                };
+            }
             break;
         case "gender-btn":
             pedData.gender = option;
