@@ -41,7 +41,7 @@ function spawnNPC(npcConfig)
     end
 
     SetBlockingOfNonTemporaryEvents(ped, true)
-    TaskPlayAnim(ped, npcConfig.animationDict, npcConfig.animation, 8.0, -8.0, -1, 1, 0, false, false, false)
+    TaskPlayAnim(ped, npcConfig.animationDict, npcConfig.animation, 8.0, -8.0, -1, 49, 0, false, false, false)
     SetModelAsNoLongerNeeded(pedModel)
     RemoveAnimDict(npcConfig.animationDict)
     spawnedNPCs[#spawnedNPCs + 1] = { name = npcConfig.name, ped = ped }

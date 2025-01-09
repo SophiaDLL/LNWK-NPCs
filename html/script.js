@@ -71,15 +71,20 @@ function buttonclicked(option, btn, modal) {
         case "animation-type-btn":
             if (option === "Idle A") {
                 pedData.animation = {
-                    name: "Idle A", 
-                    dictionary: "anim@mp_player_intcelebrationmale@idle_a"
+                    animation: "Idle A", 
+                    animationDict: "anim@mp_player_intcelebrationmale@idle_a"
                 };
             } else if (option === "Idle B") {
                 pedData.animation = {
-                    name: "Idle B", 
-                    dictionary: "anim@mp_player_intcelebrationmale@idle_b"
+                    animation: "Idle B", 
+                    animationDict: "anim@mp_player_intcelebrationmale@idle_b"
                 };
-            }
+            } else if (option === "Clapping") {
+                pedData.animation = {
+                    animation: "base", 
+                    animationDict: "amb@world_human_cheering@male_a"
+                };
+            } 
             break;
         case "gender-btn":
             pedData.gender = option;
@@ -121,7 +126,7 @@ function getPlayerPosition() {
             .then(response => response.json())
             .then(data => {
                 if (data.success) {
-                    resolve(data.position); // Return the vector4 data (x, y, z, heading)
+                    resolve(data.position); 
                 } else {
                     reject('Error retrieving player position');
                 }
@@ -168,7 +173,7 @@ function submitPed() {
         resetButtons(); 
     });
 }
-
+// THIS RESETS THE BUTTONS TO DEFAULT
 function resetButtons() {
     document.getElementById('ped-type-btn').innerText = 'Ped Type';
     document.getElementById('ped-model-btn').innerText = 'Ped Model';
@@ -179,6 +184,7 @@ function resetButtons() {
     closeModals();
 }
 
+// THIS CLOSES THE UI WHEN PRESSED
 function closeModals() {
     const modals = document.querySelectorAll('.feature-modal');
     modals.forEach(modal => {
