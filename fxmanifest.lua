@@ -1,10 +1,10 @@
 fx_version 'cerulean'
 game 'gta5'
 
-author 'laurelnwk.com/team'
-description 'A Simple FiveM Script that allows you spawn Both Multi-Player & Single-Player Peds'
+author 'jax@zwrks.com'
+description 'laurelnwk.com/team A Simple FiveM Script that allows you spawn Both Multi-Player & Single-Player Peds'
 lua54 'yes'
-version '1.3.0b'
+version '2.0.0'
 
 
 
