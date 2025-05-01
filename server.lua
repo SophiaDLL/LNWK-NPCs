@@ -1,3 +1,4 @@
+-- Function to add a new Ped
 local function addNewPed(source, pedName, pedType, pedGender, animationDict, animation, enableBlip, blipIcon, pedModel)
     -- Debugging Information
     print("Adding new ped with data:")
@@ -107,7 +108,19 @@ local function addNewPed(source, pedName, pedType, pedGender, animationDict, ani
     end
 end
 
+-- Register the /PlacePed command with permission check
 RegisterCommand('PlacePed', function(source, args, rawCommand)
+    -- Check if the player has admin permissions
+    local permission = "admin"  -- change this if tou are having probems wit placing peds
+
+    if not IsPlayerAceAllowed(source, permission) then
+        TriggerClientEvent('chat:addMessage', source, {
+            args = { '^8ERROR', 'You do not have permission to use this command.' }
+        })
+        return
+    end
+
+    -- Proceed with the normal command functionality
     local pedName = args[1]
     local pedType = args[2] == "true"
     local pedGender = args[3]
@@ -123,6 +136,7 @@ RegisterCommand('PlacePed', function(source, args, rawCommand)
     addNewPed(source, pedName, pedType, pedGender, nil, nil, false, 1, pedModel)
 end, false)
 
+-- Event to handle adding ped from client
 RegisterNetEvent("addNewPed", function(pedData)
     local src = source
     print("Received ped data from client:", json.encode(pedData))
@@ -145,9 +159,3 @@ TriggerEvent('chat:addSuggestion', '/PlacePed', 'Add a new ped to config.lua', {
     { name = "gender", help = "Ped Gender (male or female)" },
     { name = "model", help = "Ped Model (e.g., S_M_Y_Sheriff_01)" }
 })
-
--- Key-Value Pairs Example (optional feature for future use)
--- local data = json.encode(theConfig)
--- SetResourceKvp("pedConfig", data)
-
--- local data = json.decode(GetResourceKvpString("pedConfig"))
