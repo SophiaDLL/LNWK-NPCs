@@ -7,10 +7,8 @@ Config.NPCs = {
         useMPGender = "male", -- if you set to male = MP_M if you set to female = MP_F
         model = "S_M_Y_Sheriff_01", -- If UseMPClothing is false, this will be the Spawned Ped ( https://forge.plebmasters.de/peds )
         coords = vector4(428.21, -981.27, 29.71, 88.54), -- Sets the Ped Location X,y,z,H
-        animationDict = "amb@world_human_maid_clean@base", -- Animation Directory  ( https://forge.plebmasters.de/animations )
-        animation = "base", -- Animations  ( https://forge.plebmasters.de/animations )
-        enableBlip = false,
-        blipIcon = 8,
+        animationDict = "anim@heists@heist_corona@single_team", -- Animation Directory  ( https://forge.plebmasters.de/animations )
+        animation = "single_team_loop_boss", -- Animations  ( https://forge.plebmasters.de/animations )
         mpClothing = {
             components = {  -- This is all clothing  (This applys for mp/sp peds)
                 { componentId = 1, drawableId = 3, textureId = 0 }, -- Masks
@@ -41,8 +39,6 @@ Config.NPCs = {
         coords = vector4(428.51, -978.83, 29.71, 92.47), -- Sets the Ped Location X,y,z,H
         animationDict = "anim@heists@heist_corona@single_team", -- Animation Directory  ( https://forge.plebmasters.de/animations )
         animation = "single_team_loop_boss",  -- Animations  ( https://forge.plebmasters.de/animations )
-        enableBlip = false,
-        blipIcon = 8,
         mpClothing = {
             components = {  -- This is all clothing  (This applys for mp/sp peds)
                 { componentId = 1, drawableId = 0, textureId = 0 }, -- Masks

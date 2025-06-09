@@ -11,242 +11,37 @@ body {
     overflow: hidden;
 }
 
-#groups-container {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 70%;
-    max-width: 800px;
-    height: auto;
-    background-color: rgb(22 19 19);
-    box-shadow: 0px 4px 10px rgb(0 0 0 / 50%);
-    padding: 20px;
+#npc-ui{
+    background-color: #1a1919;
     border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    box-sizing: border-box;
-    z-index: 1;
-}
-
-.groups-border::before {
-    background: linear-gradient(to bottom, #212428, #3d78c742);
-    content: '';
-    filter: blur(62px);
-    position: absolute;
-    inset: -4%;
-    z-index: -1;
-}
-
-.npc-header {
-    font-size: 24px;
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
-    color: rgb(181, 181, 181);
-    margin-bottom: 20px;
-}
-
-#close-btn {
-    font-size: 18px;
-    color: rgb(245, 105, 105);
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    cursor: pointer;
-    z-index: 100;
-}
-
-.form-container {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-gap: 15px;
-}
-
-.feature-btn {
-    width: 100%;
-    padding: 12px;
-    font-size: 14px;
-    background-color: #cc0069;
-    color: #d1d1d1;
-    border-radius: 8px;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.5s;
-}
-
-.feature-btn:hover {
-    background-color: #ff1fb0;
-}
-
-.feature-modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    display: none;
-    justify-content: center;
-    align-items: center;
-    overflow-y: auto;
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
-    z-index: 999;
-}
-
-.modal-content {
-    background-color: rgb(22 19 19);
-    padding: 20px;
-    border-radius: 10px;
-    position: relative;
-    width: 80%;
-    max-width: 800px; /* Increased the max width for better spacing */
-    overflow-y: auto;
-    max-height: 80vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    margin: auto;
-    box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
-    z-index: 1000;
-}
-
-.close-modal {
-    font-size: 20px;
-    color: #ff4d4d;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    cursor: pointer;
-}
-
-.modal-scroll-container {
-    max-height: 60vh;
-    overflow-y: auto;
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 20px;
-    justify-items: center;
     padding: 10px;
-}
-
-.modal-options {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
     text-align: center;
-    margin-bottom: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    width: 250px;
+    max-width: 85%;
 }
 
-.modal-options img {
-    width: 100%;
-    max-width: 150px; /* Set a maximum width to prevent the images from becoming too large */
-    height: auto;      /* Maintain aspect ratio */
-    object-fit: contain;  /* Ensure images don't get distorted */
-    margin-bottom: 10px;
+#npc-ui p{
+    font-size: 10px;
+    margin-bottom: 15px;
+    line-height: 1.25;
 }
 
-.modal-btn {
-    background-color: #ff1fb0;
-    border: none;
-    color: white;
-    padding: 10px;
-    font-size: 14px;
-    width: 100px; /* Button width to match the image width */
-    height: 40px; /* Adjust height for better alignment */
-    border-radius: 8px;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 10px;
-}
-
-.modal-btn:hover {
-    background-color: #cc0069;
-}
-
-.feature-modal .modal-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 20px;
-    overflow: hidden;
-    width: 80%;
-    max-width: 800px;
-    max-height: 80vh;
-    box-shadow: 0 0 40px rgba(255, 255, 255, 0.6);
-    z-index: 1001;
-}
-
-@media screen and (max-width: 600px) {
-    #groups-container {
-        width: 90%;
-        height: auto;
-    }
-
-    .modal-options img {
-        max-width: 120px; /* Adjust image size for smaller screens */
-    }
-
-    .modal-btn {
-        width: 90px; /* Adjust width for smaller screens */
-        height: 35px; /* Adjust height for smaller screens */
-    }
-
-    .modal-scroll-container {
-        grid-template-columns: repeat(2, 1fr); /* Reduce the number of columns for smaller screens */
-    }
-
-    button, input, select {
-        font-size: 12px;
-        padding: 10px;
-    }
-}
-
-input[type="text"] {
-    width: 100%;
-    padding: 12px;
-    font-size: 14px;
+button {
     background-color: #cc0069;
     color: #d1d1d1;
     border: none;
-    border-radius: 8px;
-    box-sizing: border-box;
-    transition: background-color 0.3s ease;
-    margin-bottom: 10px;  /* Add space between the input box and the button */
+    border-radius: 3px;
+    padding: 7.5px 15px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: bacground-color 0.5s;
 }
 
-input[type="text"]:focus {
-    outline: none;
+button:hover{
     background-color: #ff1fb0;
 }
 
-/* Blip Icon Text Box Alignment */
-.blip-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    margin-bottom: 20px;
-}
-
-/* Ensure Blip Icon input box is the same size as the rest of the input boxes */
-#blip-icon {
-    width: 100%;  /* Ensure it takes up the full width of the container */
-    padding: 12px;  /* Same padding as other input boxes */
-    font-size: 14px;  /* Same font size */
-    background-color: #333;  /* Consistent background color */
-    color: #e6e6e6;  /* Same text color */
-    border-radius: 5px;  /* Same border radius */
-    border: 1px solid #ccc;  /* Same border style */
-    box-sizing: border-box;  /* Ensures the padding is included in the width */
-}
-
-.blip-container button:hover {
-    background-color: #ff1fb0;
+button:active{
+    background-color: #940060;
 }

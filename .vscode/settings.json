@@ -1,8 +1,0 @@
-{
-    "Lua.diagnostics.disable": [
-        "undefined-global",
-        "err-nonstandard-symbol",
-        "unknown-symbol",
-        "missing-parameter"
-    ]
-}
