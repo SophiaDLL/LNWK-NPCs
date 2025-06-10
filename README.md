@@ -1,3 +1,5 @@
+# DO NOT DOWNLOAD THE SOURCE, THIS IS ALWAYS GOING TO BE UNSTABLE AND MORE THAN LIKELY WILL NOT FUNCTION!
+
 -- Do not remove the credit on any of the provided content. 
 
 -- Following will containe all of the config and helpfull remarks towards them
