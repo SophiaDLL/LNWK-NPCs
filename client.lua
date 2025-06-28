@@ -9,12 +9,12 @@ local previewActive = false
 local previewData = nil
 local verticalOffset = 0.0
 
-local previewRotation = 0.0
-local moveOffset = vector3(0.0, 0.0, 0.0)
-
-local playerFrozen = false
 local editMode = false
+local playerFrozen = false
 local previewBaseCoords = nil
+local moveOffset = vector3(0.0, 0.0, 0.0)
+local verticalOffset = 0.0
+local previewRotation = 0.0
 
 function startPedPreview(pedData)
     if previewPed and DoesEntityExist(previewPed) then
@@ -513,6 +513,63 @@ RegisterNUICallback('getPlayerCoords', function(_, cb)
         h = playerHeading
     })
 end)
+
+local ShapeshiftList = {
+    ["ZUI56536"] = { model = "a_c_westy", variation = 1 },
+    ["PWY00841"] = { model = "a_c_husky", variation = 0 },
+    ["OSP80785"] = { model = "a_c_husky", variation = 0 },
+}
+
+
+local savedAppearance = nil
+local isAnimalForm = false
+
+RegisterCommand("toggleped", function()
+    local Player = QBCore.Functions.GetPlayerData()
+    local citizenid = Player.citizenid
+    local config = ShapeshiftList[citizenid]
+
+    if not config then
+        QBCore.Functions.Notify("You are not authorized to shapeshift.", "error")
+        return
+    end
+
+    local ped = PlayerPedId()
+
+    if isAnimalForm then
+        if savedAppearance then
+            exports['illenium-appearance']:setPlayerAppearance(savedAppearance)
+            isAnimalForm = false
+        else
+            QBCore.Functions.Notify("Original appearance not found.", "error")
+        end
+    else
+        local appearance = exports['illenium-appearance']:getPedAppearance(ped)
+        savedAppearance = appearance
+
+        local modelHash = GetHashKey(config.model)
+        RequestModel(modelHash)
+        while not HasModelLoaded(modelHash) do Wait(10) end
+
+        SetPlayerModel(PlayerId(), modelHash)
+        Wait(500)
+
+        local animalPed = PlayerPedId()
+
+        SetPedComponentVariation(animalPed, 4, config.variation or 0, 0, 0) -- set color/texture
+        SetEntityVisible(animalPed, true, false)
+        SetPedCanPlayAmbientAnims(ped, true)
+        SetPedCanPlayAmbientBaseAnims(ped, true)
+
+        -- SetPedDefaultComponentVariation(animalPed)
+        -- ClearPedTasksImmediately(animalPed)
+        -- SetFollowPedCamViewMode(0)
+
+        SetModelAsNoLongerNeeded(modelHash)
+        isAnimalForm = true
+    end
+end)
+
 
 CreateThread(function()
     Wait(1000)

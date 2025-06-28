@@ -1,10 +1,9 @@
 fx_version 'cerulean'
 game 'gta5'
 
-author 'laurelnwk.com/team'
 description 'A Simple FiveM Script that allows you spawn Both Multi-Player & Single-Player Peds'
 lua54 'yes'
-version '1.2.0'
+version '2.0.0'
 
 
 
@@ -25,7 +24,8 @@ ui_page 'html/index.html'
 files {
     'html/index.html',
     'html/style.css',
-    'html/script.js'
+    'html/script.js',
+    'html/images/*.*'
 }
 
 --dependencies {

@@ -203,8 +203,8 @@ function buttonclicked(option, btn, modal) {
                 };
             } else if (option === "Dancing") {
                 pedData.animation = {
-                    animation: "raining_cash",
-                    animationDict: "anim@mp_player_intcelebrationfemale@raining_cash"
+                    animation: "high_center",
+                    animationDict: "anim@amb@nightclub@mini@dance@dance_solo@female@var_a@"
                 };
             } else if (option === "LeanBar") {
                 pedData.animation = {
@@ -311,47 +311,53 @@ function buttonclicked(option, btn, modal) {
                     animation: "idle_a",
                     animationDict: "amb@world_human_drinking@coffee@male@idle_a"
                 };
-            } else if (option === "Dance1") {
+            } if (option === "Dance1") {
                 pedData.animation = {
-                    animation: "raining_cash",
-                    animationDict: "anim@mp_player_intcelebrationfemale@raining_cash"
+                    animation: "hi_dance_facedj_17_v2_male^5",
+                    animationDict: "anim@amb@nightclub@dancers@podium_dancers@"
                 };
             } else if (option === "Dance2") {
                 pedData.animation = {
-                    animation: "find_the_fish",
-                    animationDict: "anim@mp_player_intcelebrationfemale@find_the_fish"
+                    animation: "high_center_down",
+                    animationDict: "anim@amb@nightclub@mini@dance@dance_solo@male@var_b@"
                 };
             } else if (option === "Dance3") {
                 pedData.animation = {
-                    animation: "mi_dance_facedj_15_v1_female^1",
-                    animationDict: "anim@amb@nightclub@mini@dance@dance_solo@female@var_a@"
+                    animation: "high_center",
+                    animationDict: "anim@amb@nightclub@mini@dance@dance_solo@male@var_a@"
                 };
             } else if (option === "Dance4") {
                 pedData.animation = {
-                    animation: "dance_loop_teddy_bear",
-                    animationDict: "special_ped@mountain_dancer@base"
+                    animation: "high_center_up",
+                    animationDict: "anim@amb@nightclub@mini@dance@dance_solo@male@var_b@"
                 };
             } else if (option === "Dance5") {
                 pedData.animation = {
-                    animation: "mp_dance_loop",
-                    animationDict: "anim@mp_player_intcelebrationfemale@find_the_fish"
+                    animation: "med_center",
+                    animationDict: "anim@amb@casino@mini@dance@dance_solo@female@var_a@"
                 };
-            } else if (option === "DanceSlow") {
+            } else if (option === "Dance6") {
                 pedData.animation = {
-                    animation: "peace",
-                    animationDict: "anim@mp_player_intcelebrationfemale@peace"
+                    animation: "dance_loop_tao",
+                    animationDict: "misschinese2_crystalmazemcs1_cs"
                 };
-            } else if (option === "Shuffle") {
+            } else if (option === "Dance7") {
                 pedData.animation = {
-                    animation: "shuffle",
-                    animationDict: "anim@move_m@grooving@"
+                    animation: "dance_loop_tao",
+                    animationDict: "misschinese2_crystalmazemcs1_ig"
                 };
-            } else if (option === "DanceEnergetic") {
+            } else if (option === "Dance8") {
                 pedData.animation = {
-                    animation: "raining_cash",
-                    animationDict: "anim@mp_player_intcelebrationfemale@raining_cash"
+                    animation: "dance_m_default",
+                    animationDict: "missfbi3_sniping"
+                };
+            } else if (option === "Dance9") {
+                pedData.animation = {
+                    animation: "med_center_up",
+                    animationDict: "anim@amb@nightclub@mini@dance@dance_solo@female@var_a@"
                 };
             }
+
             break;
 
         case "gender-btn":

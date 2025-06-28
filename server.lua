@@ -17,19 +17,21 @@ end
 local function addNewPed(source, pedName, pedType, pedGender, animationDict, animation, enableBlip, blipIcon, pedModel, coords, heading)
     print("Adding new ped with data:")
     print("Name:", pedName, "Type:", pedType, "Gender:", pedGender, "Model:", pedModel)
-
+    if pedGender == nil and not pedType then
+        pedGender = "N/A"
+    end
     pedModel = pedModel or (pedType and (pedGender == "male" and "mp_m_freemode_01" or "mp_f_freemode_01") or "S_M_Y_Sheriff_01")
     enableBlip = enableBlip or false
     blipIcon = blipIcon or 1
 
     if not pedName or not pedGender then
         TriggerClientEvent('chat:addMessage', source, {
-            args = { '^8ERROR', 'Invalid syntax. Use /PlacePed "name" "type" "gender" "model"' }
+            args = { '^8ERROR', 'Invalid syntax. Use "name" "type" "gender" "model"' }
         })
         return
     end
 
-    if pedGender:lower() ~= "male" and pedGender:lower() ~= "female" then
+    if pedType and pedGender:lower() ~= "male" and pedGender:lower() ~= "female" then
         TriggerClientEvent('chat:addMessage', source, {
             args = { '^8ERROR', 'Invalid gender. Use "male" or "female".' }
         })
