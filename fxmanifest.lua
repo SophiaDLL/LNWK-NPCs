@@ -5,19 +5,17 @@ description 'A Simple FiveM Script that allows you spawn Both Multi-Player & Sin
 lua54 'yes'
 version '2.0.0'
 
+shared_scripts {
+    'shared/config.lua'
+} 
 
-
--- client_script 'client.lua'
 client_scripts {
-   -- 'test_write.lua',
-    'client.lua'
+    'client/client.lua'
 }
 server_scripts {
-    'server.lua'
+    'server/server.lua'
 } 
-shared_scripts {
-    'config.lua'
-} 
+
 
 ui_page 'html/index.html'
 
@@ -25,6 +23,8 @@ files {
     'html/index.html',
     'html/style.css',
     'html/script.js',
+    'html/configs/sp.json',
+    'html/configs/emotes.json',
     'html/images/*.*'
 }
 

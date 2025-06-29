@@ -1,0 +1,99 @@
+[
+    {
+        "model": "s_m_y_marine_03",
+        "enableBlip": true,
+        "animationDict": "anim@amb@nightclub@dancers@podium_dancers@",
+        "useMPClothing": false,
+        "animation": "hi_dance_facedj_17_v2_male^5",
+        "name": "New UI",
+        "useMPGender": "N/A",
+        "mpClothing": {
+            "props": [
+                {
+                    "propId": 0,
+                    "drawableId": 5,
+                    "textureId": 0
+                },
+                {
+                    "propId": 1,
+                    "drawableId": 0,
+                    "textureId": 0
+                },
+                {
+                    "propId": 2,
+                    "drawableId": 0,
+                    "textureId": 0
+                },
+                {
+                    "propId": 6,
+                    "drawableId": 0,
+                    "textureId": 0
+                },
+                {
+                    "propId": 7,
+                    "drawableId": 0,
+                    "textureId": 0
+                }
+            ],
+            "components": [
+                {
+                    "componentId": 1,
+                    "textureId": 0,
+                    "drawableId": 3
+                },
+                {
+                    "componentId": 3,
+                    "textureId": 0,
+                    "drawableId": 0
+                },
+                {
+                    "componentId": 4,
+                    "textureId": 0,
+                    "drawableId": 18
+                },
+                {
+                    "componentId": 5,
+                    "textureId": 0,
+                    "drawableId": 0
+                },
+                {
+                    "componentId": 6,
+                    "textureId": 0,
+                    "drawableId": 0
+                },
+                {
+                    "componentId": 7,
+                    "textureId": 0,
+                    "drawableId": 0
+                },
+                {
+                    "componentId": 8,
+                    "textureId": 0,
+                    "drawableId": 10
+                },
+                {
+                    "componentId": 9,
+                    "textureId": 0,
+                    "drawableId": 0
+                },
+                {
+                    "componentId": 10,
+                    "textureId": 0,
+                    "drawableId": 0
+                },
+                {
+                    "componentId": 11,
+                    "textureId": 0,
+                    "drawableId": 23
+                }
+            ]
+        },
+        "blipIcon": 63,
+        "coords": [
+            7147.5009765625,
+            2884.544921875,
+            396.1131286621094,
+            147.99998474121095
+        ]
+    }
+]

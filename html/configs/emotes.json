@@ -1,0 +1,350 @@
+[
+    {
+        "value": "slow_clap",
+        "label": "Slow Clap",
+        "animation": "slow_clap",
+        "animationDict": "anim@mp_player_intcelebrationfemale@slow_clap"
+    },
+    {
+        "value": "Clapping",
+        "label": "Clapping",
+        "animation": "base",
+        "animationDict": "amb@world_human_cheering@male_a"
+    },
+    {
+        "value": "salute",
+        "label": "Salute",
+        "animation": "salute",
+        "animationDict": "anim@mp_player_intcelebrationmale@salute"
+    },
+    {
+        "value": "face_palm",
+        "label": "Face Palm",
+        "animation": "face_palm",
+        "animationDict": "anim@mp_player_intcelebrationfemale@face_palm"
+    },
+    {
+        "value": "gangmember_stickup_loop",
+        "label": "Gangmember Stickup Loop",
+        "animation": "gangmember_stickup_loop",
+        "animationDict": "random@countryside_gang_fight"
+    },
+    {
+        "value": "Texting",
+        "label": "Texting",
+        "animation": "base",
+        "animationDict": "amb@world_human_stand_mobile@male@text@base"
+    },
+    {
+        "value": "Crying",
+        "label": "Crying",
+        "animation": "console_end_loop_floyd",
+        "animationDict": "switch@trevor@floyd_crying"
+    },
+    {
+        "value": "ICrossing",
+        "label": "Icrossing",
+        "animation": "base",
+        "animationDict": "amb@code_human_cross_road@male@base"
+    },
+    {
+        "value": "PhoneCall",
+        "label": "Phonecall",
+        "animation": "cellphone_call_listen_base",
+        "animationDict": "switch@michael@bench"
+    },
+    {
+        "value": "Pissing",
+        "label": "Pissing",
+        "animation": "urinal_asifyouneededproof",
+        "animationDict": "missheist_agency3aig_23"
+    },
+    {
+        "value": "Smoking",
+        "label": "Smoking",
+        "animation": "smoke_idle",
+        "animationDict": "timetable@gardener@smoking_joint"
+    },
+    {
+        "value": "Checkout",
+        "label": "Checkout",
+        "animation": "try_shirt_neutral_a",
+        "animationDict": "mp_clothing@female@shirt"
+    },
+    {
+        "value": "Shaking",
+        "label": "Shaking",
+        "animation": "idle",
+        "animationDict": "mp_move@prostitute@f@cokehead"
+    },
+    {
+        "value": "Kneeling",
+        "label": "Kneeling",
+        "animation": "idle_a",
+        "animationDict": "amb@medic@standing@kneel@idle_a"
+    },
+    {
+        "value": "TTD",
+        "label": "Ttd",
+        "animation": "idle_a",
+        "animationDict": "amb@medic@standing@tendtodead@idle_a"
+    },
+    {
+        "value": "Guard",
+        "label": "Guard",
+        "animation": "idle_e",
+        "animationDict": "amb@world_human_guard_patrol@male@idle_b"
+    },
+    {
+        "value": "photography",
+        "label": "Photography",
+        "animation": "photography",
+        "animationDict": "anim@mp_player_intcelebrationfemale@photography"
+    },
+    {
+        "value": "ThumbsUp",
+        "label": "Thumbsup",
+        "animation": "thumbs_up",
+        "animationDict": "anim@mp_player_intcelebrationfemale@thumbs_up"
+    },
+    {
+        "value": "Bird",
+        "label": "Bird",
+        "animation": "wakeup",
+        "animationDict": "random@peyote@bird"
+    },
+    {
+        "value": "REPLACE",
+        "label": "Replace",
+        "animation": "",
+        "animationDict": ""
+    },
+    {
+        "value": "Surrender",
+        "label": "Surrender",
+        "animation": "idle_a",
+        "animationDict": "random@arrests@busted"
+    },
+    {
+        "value": "SitGround",
+        "label": "Sitground",
+        "animation": "idle_a",
+        "animationDict": "anim@heists@fleeca_bank@ig_7_jetski_owner"
+    },
+    {
+        "value": "LeanWall",
+        "label": "Leanwall",
+        "animation": "idle_a",
+        "animationDict": "amb@world_human_leaning@male@wall@back@hands_together@idle_a"
+    },
+    {
+        "value": "Pushups",
+        "label": "Pushups",
+        "animation": "pushups_loop",
+        "animationDict": "amb@world_human_push_ups@male@base"
+    },
+    {
+        "value": "SitChair",
+        "label": "Sitchair",
+        "animation": "base",
+        "animationDict": "timetable@ron@ig_3_couch"
+    },
+    {
+        "value": "SitChairAttentive",
+        "label": "Sitchairattentive",
+        "animation": "sit_base_jimmy",
+        "animationDict": "anim@scripted@freemode_npc@fix_astu_ig3_pooh_jimmy@jimmy@"
+    },
+    {
+        "value": "SitChair4",
+        "label": "Sitchair4",
+        "animation": "ig_2_alt1_base",
+        "animationDict": "timetable@ron@ron_ig_2_alt1"
+    },
+    {
+        "value": "Dancing",
+        "label": "Dancing",
+        "animation": "high_center",
+        "animationDict": "anim@amb@nightclub@mini@dance@dance_solo@female@var_a@"
+    },
+    {
+        "value": "LeanBar",
+        "label": "Leanbar",
+        "animation": "idle_a",
+        "animationDict": "amb@prop_human_bum_shopping_cart@male@idle_a"
+    },
+    {
+        "value": "TieShoes",
+        "label": "Tieshoes",
+        "animation": "idle_a",
+        "animationDict": "amb@medic@standing@tendtodead@idle_a"
+    },
+    {
+        "value": "Think",
+        "label": "Think",
+        "animation": "base",
+        "animationDict": "amb@world_human_hang_out_street@male_b@idle_a"
+    },
+    {
+        "value": "KnockedOut",
+        "label": "Knockedout",
+        "animation": "dead_a",
+        "animationDict": "dead"
+    },
+    {
+        "value": "CrossArms",
+        "label": "Crossarms",
+        "animation": "idle_a",
+        "animationDict": "amb@world_human_hang_out_street@female_arms_crossed@idle_a"
+    },
+    {
+        "value": "HandsHips",
+        "label": "Handships",
+        "animation": "idle_a",
+        "animationDict": "amb@world_human_hang_out_street@female_arm_side@idle_a"
+    },
+    {
+        "value": "LeanForward",
+        "label": "Leanforward",
+        "animation": "idle_a",
+        "animationDict": "amb@world_human_leaning@male@wall@back@idle_a"
+    },
+    {
+        "value": "SitBench",
+        "label": "Sitbench",
+        "animation": "sit",
+        "animationDict": "timetable@ron@ig_5_p3"
+    },
+    {
+        "value": "SitCasual",
+        "label": "Sitcasual",
+        "animation": "base",
+        "animationDict": "amb@world_human_picnic@male@idle_a"
+    },
+    {
+        "value": "Yoga",
+        "label": "Yoga",
+        "animation": "pose_a",
+        "animationDict": "amb@world_human_yoga@male@base"
+    },
+    {
+        "value": "Meditate",
+        "label": "Meditate",
+        "animation": "idle_c",
+        "animationDict": "rcmcollect_paperleadinout@"
+    },
+    {
+        "value": "CrouchIdle",
+        "label": "Crouchidle",
+        "animation": "idle",
+        "animationDict": "move_crouch_proto"
+    },
+    {
+        "value": "Watch",
+        "label": "Watch",
+        "animation": "idle_a",
+        "animationDict": "amb@code_human_wander_clipboard@male@base"
+    },
+    {
+        "value": "LeanShoulder",
+        "label": "Leanshoulder",
+        "animation": "idle_a",
+        "animationDict": "amb@world_human_leaning@male@wall@back@foot_up@idle_a"
+    },
+    {
+        "value": "Notes",
+        "label": "Notes",
+        "animation": "base",
+        "animationDict": "amb@world_human_clipboard@male@idle_a"
+    },
+    {
+        "value": "CleanGround",
+        "label": "Cleanground",
+        "animation": "base",
+        "animationDict": "amb@world_human_maid_clean@"
+    },
+    {
+        "value": "Clipboard",
+        "label": "Clipboard",
+        "animation": "idle_a",
+        "animationDict": "amb@world_human_clipboard@male@base"
+    },
+    {
+        "value": "Hammer",
+        "label": "Hammer",
+        "animation": "idle_a",
+        "animationDict": "amb@world_human_hammering@male@base"
+    },
+    {
+        "value": "HammerBench",
+        "label": "Hammerbench",
+        "animation": "idle_a",
+        "animationDict": "amb@world_human_hammering@male@base"
+    },
+    {
+        "value": "Bartender",
+        "label": "Bartender",
+        "animation": "idle_a",
+        "animationDict": "amb@world_human_bum_standing@drunk@idle_a"
+    },
+    {
+        "value": "DrinkLean",
+        "label": "Drinklean",
+        "animation": "idle_a",
+        "animationDict": "amb@world_human_drinking@coffee@male@idle_a"
+    },
+    {
+        "value": "Dance1",
+        "label": "Dance1",
+        "animation": "hi_dance_facedj_17_v2_male^5",
+        "animationDict": "anim@amb@nightclub@dancers@podium_dancers@"
+    },
+    {
+        "value": "Dance2",
+        "label": "Dance2",
+        "animation": "high_center_down",
+        "animationDict": "anim@amb@nightclub@mini@dance@dance_solo@male@var_b@"
+    },
+    {
+        "value": "Dance3",
+        "label": "Dance3",
+        "animation": "high_center",
+        "animationDict": "anim@amb@nightclub@mini@dance@dance_solo@male@var_a@"
+    },
+    {
+        "value": "Dance4",
+        "label": "Dance4",
+        "animation": "high_center_up",
+        "animationDict": "anim@amb@nightclub@mini@dance@dance_solo@male@var_b@"
+    },
+    {
+        "value": "Dance5",
+        "label": "Dance5",
+        "animation": "med_center",
+        "animationDict": "anim@amb@casino@mini@dance@dance_solo@female@var_a@"
+    },
+    {
+        "value": "Dance6",
+        "label": "Dance6",
+        "animation": "dance_loop_tao",
+        "animationDict": "misschinese2_crystalmazemcs1_cs"
+    },
+    {
+        "value": "Dance7",
+        "label": "Dance7",
+        "animation": "dance_loop_tao",
+        "animationDict": "misschinese2_crystalmazemcs1_ig"
+    },
+    {
+        "value": "Dance8",
+        "label": "Dance8",
+        "animation": "dance_m_default",
+        "animationDict": "missfbi3_sniping"
+    },
+    {
+        "value": "Dance9",
+        "label": "Dance9",
+        "animation": "med_center_up",
+        "animationDict": "anim@amb@nightclub@mini@dance@dance_solo@female@var_a@"
+    }
+]

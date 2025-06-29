@@ -1,252 +1,391 @@
-body {
+
+* {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
-    background-color: rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: transparent;
     color: #e6e6e6;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
     overflow: hidden;
 }
 
+/* Main Container */
 #groups-container {
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 70%;
-    max-width: 800px;
-    height: auto;
-    background-color: rgb(22 19 19);
-    box-shadow: 0px 4px 10px rgb(0 0 0 / 50%);
-    padding: 20px;
-    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+    z-index: 1000;
+}
+
+.container {
+    background: rgba(10, 10, 10, 0.95);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.header {
     display: flex;
-    flex-direction: column;
-    box-sizing: border-box;
-    z-index: 1;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: rgba(20, 20, 20, 0.9);
+    border-bottom: 1px solid #222;
 }
 
-.groups-border::before {
-    background: linear-gradient(to bottom, #212428, #3d78c742);
-    content: '';
-    filter: blur(62px);
-    position: absolute;
-    inset: -4%;
-    z-index: -1;
-}
-
-.npc-header {
-    font-size: 24px;
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
-    color: rgb(181, 181, 181);
-    margin-bottom: 20px;
+.header h1 {
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #f0f0f0;
 }
 
 #close-btn {
     font-size: 18px;
-    color: rgb(245, 105, 105);
-    position: absolute;
-    top: 10px;
-    right: 10px;
+    color: #999;
     cursor: pointer;
-    z-index: 100;
+    transition: color 0.2s;
+}
+
+#close-btn:hover {
+    color: #fff;
 }
 
 .form-container {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-gap: 15px;
+    padding: 20px;
 }
 
-.feature-btn {
-    width: 100%;
-    padding: 12px;
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
     font-size: 14px;
-    background-color: #cc0069;
-    color: #d1d1d1;
-    border-radius: 8px;
-    border: none;
+    color: #aaa;
+    font-weight: 500;
+}
+
+input[type="text"],
+input[type="number"],
+.select-btn {
+    width: 100%;
+    padding: 12px 15px;
+    background: rgba(30, 30, 30, 0.8);
+    border: 1px solid #333;
+    border-radius: 6px;
+    color: #e6e6e6;
+    font-size: 14px;
+    outline: none;
+    transition: all 0.2s;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+    border-color: #555;
+    background: rgba(40, 40, 40, 0.8);
+}
+
+.select-btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     cursor: pointer;
-    transition: background-color 0.5s;
 }
 
-.feature-btn:hover {
-    background-color: #ff1fb0;
+.select-btn span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
-.feature-modal {
+.select-btn i {
+    font-size: 12px;
+    color: #777;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+/* Blip Settings */
+.blip-settings {
+    background: rgba(25, 25, 25, 0.6);
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.toggle-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #333;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 4px;
+    bottom: 4px;
+    background-color: #666;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #cc0069;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+    background-color: #fff;
+}
+
+
+.submit-btn {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(to right, #cc0069, #a8005c);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-transform: uppercase;
+}
+
+.submit-btn:hover {
+    background: linear-gradient(to right, #d60070, #b80064);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(204, 0, 105, 0.3);
+}
+
+
+.modal {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    display: none;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
     justify-content: center;
     align-items: center;
-    overflow-y: auto;
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
-    z-index: 999;
+    z-index: 2000;
+    display: flex !important;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+}
+
+.modal.show {
+    opacity: 1;
+    pointer-events: all;
 }
 
 .modal-content {
-    background-color: rgb(22 19 19);
-    padding: 20px;
-    border-radius: 10px;
     position: relative;
-    width: 80%;
-    max-width: 800px; /* Increased the max width for better spacing */
-    overflow-y: auto;
-    max-height: 80vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    margin: auto;
-    box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
-    z-index: 1000;
-}
-
-.close-modal {
-    font-size: 20px;
-    color: #ff4d4d;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    cursor: pointer;
-}
-
-.modal-scroll-container {
-    max-height: 60vh;
-    overflow-y: auto;
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 20px;
-    justify-items: center;
-    padding: 10px;
-}
-
-.modal-options {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    text-align: center;
-    margin-bottom: 10px;
-}
-
-.modal-options img {
-    width: 100%;
-    max-width: 150px; /* Set a maximum width to prevent the images from becoming too large */
-    height: auto;      /* Maintain aspect ratio */
-    object-fit: contain;  /* Ensure images don't get distorted */
-    margin-bottom: 10px;
-}
-
-.modal-btn {
-    background-color: #ff1fb0;
-    border: none;
-    color: white;
-    padding: 10px;
-    font-size: 14px;
-    width: 100px; /* Button width to match the image width */
-    height: 40px; /* Adjust height for better alignment */
-    border-radius: 8px;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 10px;
-}
-
-.modal-btn:hover {
-    background-color: #cc0069;
-}
-
-.feature-modal .modal-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 20px;
-    overflow: hidden;
-    width: 80%;
+    width: 90%;
     max-width: 800px;
     max-height: 80vh;
-    box-shadow: 0 0 40px rgba(255, 255, 255, 0.6);
-    z-index: 1001;
-}
-
-@media screen and (max-width: 600px) {
-    #groups-container {
-        width: 90%;
-        height: auto;
-    }
-
-    .modal-options img {
-        max-width: 120px; /* Adjust image size for smaller screens */
-    }
-
-    .modal-btn {
-        width: 90px; /* Adjust width for smaller screens */
-        height: 35px; /* Adjust height for smaller screens */
-    }
-
-    .modal-scroll-container {
-        grid-template-columns: repeat(2, 1fr); /* Reduce the number of columns for smaller screens */
-    }
-
-    button, input, select {
-        font-size: 12px;
-        padding: 10px;
-    }
-}
-
-input[type="text"] {
-    width: 100%;
-    padding: 12px;
-    font-size: 14px;
-    background-color: #cc0069;
-    color: #d1d1d1;
-    border: none;
+    background: rgba(15, 15, 15, 0.95);
     border-radius: 8px;
-    box-sizing: border-box;
-    transition: background-color 0.3s ease;
-    margin-bottom: 10px;  /* Add space between the input box and the button */
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
 }
 
-input[type="text"]:focus {
-    outline: none;
-    background-color: #ff1fb0;
+.modal-header {
+    padding: 15px 20px;
+    background: rgba(25, 25, 25, 0.9);
+    border-bottom: 1px solid #222;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-/* Blip Icon Text Box Alignment */
-.blip-container {
+.modal-header h2 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #f0f0f0;
+}
+
+.modal-header .close-modal {
+    color: #999;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.modal-header .close-modal:hover {
+    color: #fff;
+}
+
+.ped-model-container, .animation-container {
+    display: flex;
+    height: 60vh;
+}
+
+.ped-list-container, .animation-list-container {
+    width: 30%;
+    border-right: 1px solid #333;
+    overflow-y: auto;
+}
+
+.ped-list, .animation-list {
     display: flex;
     flex-direction: column;
+}
+
+.ped-item, .animation-item {
+    padding: 12px 15px;
+    cursor: pointer;
+    border-bottom: 1px solid #222;
+    color: #aaa;
+    transition: all 0.2s;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.ped-item:hover, .ped-item.selected,
+.animation-item:hover, .animation-item.selected {
+    background: rgba(50, 50, 50, 0.8);
+    color: #fff;
+}
+
+.ped-preview-container, .animation-preview-container {
+    width: 70%;
+    display: flex;
+    justify-content: center;
     align-items: center;
+    padding: 20px;
+}
+
+#ped-preview, #animation-preview {
+    text-align: center;
     width: 100%;
-    margin-bottom: 20px;
 }
 
-/* Ensure Blip Icon input box is the same size as the rest of the input boxes */
-#blip-icon {
-    width: 100%;  /* Ensure it takes up the full width of the container */
-    padding: 12px;  /* Same padding as other input boxes */
-    font-size: 14px;  /* Same font size */
-    background-color: #333;  /* Consistent background color */
-    color: #e6e6e6;  /* Same text color */
-    border-radius: 5px;  /* Same border radius */
-    border: 1px solid #ccc;  /* Same border style */
-    box-sizing: border-box;  /* Ensures the padding is included in the width */
+#ped-preview img {
+    max-width: 100%;
+    max-height: 300px;
+    border-radius: 4px;
+    margin-bottom: 15px;
 }
 
-.blip-container button:hover {
-    background-color: #ff1fb0;
+#ped-preview p, #animation-preview p {
+    font-size: 16px;
+    margin-bottom: 15px;
+    color: #f0f0f0;
+}
+
+#no-ped-selected, #no-animation-selected {
+    color: #777;
+    font-style: italic;
+}
+
+#animation-preview-info {
+    margin-top: 20px;
+    width: 100%;
+}
+
+#preview-animation-name {
+    font-size: 18px;
+    font-weight: bold;
+    color: #f0f0f0;
+    margin-bottom: 5px;
+}
+
+#preview-animation-dict {
+    font-size: 14px;
+    color: #aaa;
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+.option-btn {
+    padding: 10px 15px;
+    background: rgba(30, 30, 30, 0.8);
+    border: 1px solid #333;
+    border-radius: 6px;
+    color: #e6e6e6;
+    font-size: 14px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    width: 100%;
+    max-width: 150px;
+    margin: 0 auto;
+}
+
+.option-btn:hover {
+    background: rgba(50, 50, 50, 0.8);
+    border-color: #555;
+}
+
+@media (max-width: 600px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .ped-model-container, .animation-container {
+        flex-direction: column;
+        height: 70vh;
+    }
+
+    .ped-list-container, .ped-preview-container,
+    .animation-list-container, .animation-preview-container {
+        width: 100%;
+    }
+
+    .ped-list-container, .animation-list-container {
+        height: 40%;
+        border-right: none;
+        border-bottom: 1px solid #333;
+    }
+
+    .ped-preview-container, .animation-preview-container {
+        height: 60%;
+    }
 }
