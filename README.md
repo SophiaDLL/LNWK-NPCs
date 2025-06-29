@@ -1,50 +1,31 @@
--- IF YOU HAVE DOWNLOADED THE SOURCES INSTED OF THE RELEASE DO NOT EXPECT ALL FETURES TO WORK. THE ARE UPDATED LIVE AND WORK ARE BEING DONE TO THEM CONSTANTLY. THE LIVE UPDATES ARE WHAT GOES INTO THE FULL RELEASES AND WE ARE EXPECTING THE UI FOR v1.3 TO BE DONE WITHIN THE NEXT 2-5 DAYS DEPENDING ON FREETIME AND WORK ABILITY. 
+# BSD-NPCS
+---
 
-PLEASE ONLY DONLOAD THE RELEASES FOR FULLY WORKING CONTENT
+As of 29/06/2025 Version 3.0 Will be Released to a fully Functioning Standard. 
+--
 
--- Do not remove the credit on any of the provided content. 
+## How to use?
 
--- Following will containe all of the config and helpfull remarks towards them
+Open UI Keybind; F1 by Default. this is Editable within the Config.lua
+```
+Config.OpenUI = "F1"  -- Keybind for opening UI
+```
 
-                name = "Police NPC", -- This is a name that you can name what ever you want the npc to be labled as so that you dont get mixed up
-                
-                useMPClothing = false, -- True = Will uses the mpClothing Options Flase = Will use the Modle
-                
-                model = "s_f_y_ranger_01", -- If UseMPClothing = false this will be the Spawned Ped
-                
-                coords = vector4(441.39, -978.85, 29.69, 180), -- This is the Peds Location
-                
-                -- https://forge.plebmasters.de/animations Use Plebmasters to get the animation directory & The animatrion name. 
-                
-                animationDict = "anim@heists@heist_corona@single_team", -- This is the animation directory
-                
-                animation = "single_team_loop_boss",  -- This is the animation that would be used both Directory & Animation can be found on plebmasters
-                
-              --  mpClothing = {
-              --      components = {
-              --          { componentId = 1, drawableId = 0, textureId = 0 }, -- Masks
-              --          { componentId = 3, drawableId = 0, textureId = 0 }, -- Arms
-              --          { componentId = 4, drawableId = 1, textureId = 0 }, -- Legs
-              --          { componentId = 5, drawableId = 0, textureId = 0 }, -- Bags
-              --          { componentId = 6, drawableId = 0, textureId = 0 }, -- Shoes
-              --          { componentId = 7, drawableId = 0, textureId = 0 }, -- Accessories
-              --          { componentId = 8, drawableId = 15, textureId = 0 }, -- Undershirts
-              --          { componentId = 9, drawableId = 0, textureId = 0 }, -- Body Armor
-              --          { componentId = 10, drawableId = 0, textureId = 0 }, -- Decals
-              --          { componentId = 11, drawableId = 15, textureId = 0 } -- Tops
-              --      },
-              --      props = {
-              --          { propId = 0, drawableId = 3, textureId = 0 }, -- Hats
-              --          { propId = 1, drawableId = 0, textureId = 0 }, -- Glasses
-              --          { propId = 2, drawableId = 0, textureId = 0 }, -- Ears
-              --          { propId = 6, drawableId = 0, textureId = 0 }, -- Watches
-              --          { propId = 7, drawableId = 0, textureId = 0 } -- Bracelets
-              --          -- drawableId = 15 = The number of clothing relevant to the clothing
-              --          -- textureId = 0  = The texture that you want to use on the clothing
+**What is BSD-NPCs?**
+BSD-NPCs is a powerful, open-source NPC spawner built specifically for FiveM servers. Designed with both performance and usability in mind, it allows server owners and developers to spawn, update, and manage NPCs in real time, all through a modern and intuitive user interface.
 
--- CORRECT USE OF THE /PlacePed Command
+Unlike many outdated or static NPC spawners, BSD-NPCs is actively maintained and continues to evolve with the needs of the community. It provides a clean and efficient workflow for creating immersive in-game environments with ease.
 
-command = /PlacePed
-name = "the name of youre ped"
-type = "true/false" true = mp Clothing false = Ped Mpdle
-gender = "male/Female"
+**Key Features:**
+Live NPC Spawning: Instantly create NPCs while the server is running, without needing to restart or reload scripts. Changes appear in-game as soon as they’re made.
+
+**Real-Time Editing:** Move, modify, or remove existing NPCs on the fly. Adjust positions, behaviors, models, and more—all with immediate feedback.
+
+**Clean and Modern UI:** Built with usability in mind, BSD-NPCs features a sleek interface that’s easy to navigate, even for beginners. No clunky menus or outdated tools.
+
+**Open Source & Community Driven:** BSD-NPCs is fully open source, meaning anyone can contribute, customize, or extend its functionality. The project is actively developed and updated based on user feedback and evolving best practices.
+
+**Lightweight & Optimized:** Designed to minimize server load while maintaining high performance and flexibility.
+
+**Who is it for?**
+Whether you're a server administrator building complex roleplay scenarios, a developer prototyping new features, or a content creator looking for dynamic NPC interactions—BSD-NPCs gives you full control over your environment with minimal setup.
