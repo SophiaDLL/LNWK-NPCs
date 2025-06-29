@@ -1,9 +1,10 @@
 fx_version 'cerulean'
 game 'gta5'
 
+author 'https://bsd.tebex.io/'
 description 'A Simple FiveM Script that allows you spawn Both Multi-Player & Single-Player Peds'
 lua54 'yes'
-version '2.0.0'
+version '3.0.0'
 
 shared_scripts {
     'shared/config.lua'
